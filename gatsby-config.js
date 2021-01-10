@@ -5,6 +5,7 @@ module.exports = {
     author: `@eun-seong`,
   },
   plugins: [
+    `gatsby-plugin-typescript`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -15,6 +16,20 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/posts`,
+      },
+    },
+    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-generate-typings`,
+      options: {
+        dest: `./src/graphql-types.d.ts`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -31,5 +46,5 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-  pathPrefix: "/TIL",
-}
+  pathPrefix: '/TIL',
+};
