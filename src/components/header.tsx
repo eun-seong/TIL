@@ -41,7 +41,6 @@ const Header: React.FC<IProps> = ({ siteTitle }) => (
     <Div>
       <SLink to='/'>{siteTitle}</SLink>
       <Menu>
-        <SLink to='/posts'>Posts</SLink>
         <SLink to='/about'>About</SLink>
       </Menu>
     </Div>
