@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Header from './header';
 
 const Wrapper = styled.div`
+  display: flex;
   margin: 0 auto;
   max-width: 48rem;
   padding: 1rem;
@@ -30,7 +31,7 @@ const Layout: React.FC<IProps> = ({ children }) => {
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Wrapper>
-        <main>{children}</main>
+        <main style={{ width: '100%' }}>{children}</main>
       </Wrapper>
       <footer>
         <Wrapper>© {new Date().getFullYear()}, dev_eun</Wrapper>

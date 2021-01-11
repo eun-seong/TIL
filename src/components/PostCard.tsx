@@ -7,8 +7,17 @@ interface IProps {
   node: MarkdownRemark;
 }
 
+const Title = styled.h2`
+  border-bottom: 0px;
+`;
+
 const TitleLink = styled(Link)`
   text-decoration: none;
+  color: rebeccapurple;
+  transition: color 0.2s;
+  &:hover {
+    color: #996699;
+  }
 `;
 
 const Description = styled.div`
@@ -24,9 +33,9 @@ const Date = styled.div`
 const PostCard: React.FC<IProps> = ({ node }) => {
   return (
     <li>
-      <h2>
+      <Title>
         <TitleLink to={node.frontmatter.path}>{node.frontmatter.title}</TitleLink>
-      </h2>
+      </Title>
       <Description>{node.excerpt}</Description>
       <Date>{node.frontmatter.date}</Date>
     </li>
