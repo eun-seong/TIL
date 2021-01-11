@@ -4,7 +4,6 @@ import PropTypes, { ReactNodeLike } from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import Header from './header';
-import './layout.css';
 
 const Wrapper = styled.div`
   margin: 0 auto;
