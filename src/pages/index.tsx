@@ -1,9 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Query } from '../graphql-types';
 
+import PostCard from '../components/PostCard';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+
+const Header = styled.div`
+  display: flex;
+  justify-content: center;
+  text-justify: center;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+`;
+
+const Ul = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+`;
 
 const LatestPostListQuery = graphql`
   query MyQuery {
@@ -29,20 +45,16 @@ const IndexPage: React.FC = () => {
 
   return (
     <Layout>
-      <SEO title="Home" />
-      <h1>최근 작성한 게시글 목록</h1>
-      <ul>
+      <SEO title='Home' />
+      <Header>게시글 목록</Header>
+      <Ul>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <li key={node.id}>
-            <h2>
-              <Link to={node.frontmatter.path}>{node.frontmatter.title}</Link>
-            </h2>
-            <h3>{node.frontmatter.date}</h3>
-            <p>{node.excerpt}</p>
+          <>
+            <PostCard node={node} />
             <hr />
-          </li>
+          </>
         ))}
-      </ul>
+      </Ul>
     </Layout>
   );
 };

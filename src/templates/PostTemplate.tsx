@@ -9,15 +9,15 @@ type IPostTemplateProps = ITemplateProps<{
   date: string;
 }>;
 
-const PostTemplate: React.FC<IPostTemplateProps> = React.memo(props => {
+const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
   const { title, date, html } = props.pageContext;
   return (
     <Layout>
-      <h2>{title}</h2>
+      <h1>{title}</h1>
       <h4>{date}</h4>
       <hr />
       <div dangerouslySetInnerHTML={{ __html: html }} />
-      <Utterances repo="eun-seong/TIL" />
+      <Utterances repo='eun-seong/TIL' />
     </Layout>
   );
 });
