@@ -1,7 +1,8 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import Layout from '../components/layout';
 import Utterances from '../components/utterances';
-import PostHeader from '../components/PostHeader';
 import { ITemplateProps } from '../interface';
 
 type IPostTemplateProps = ITemplateProps<{
@@ -10,12 +11,18 @@ type IPostTemplateProps = ITemplateProps<{
   date: string;
 }>;
 
+const Date = styled.div`
+  color: #aaa;
+  font-size: 0.8rem;
+  margin-left: 2rem;
+`;
+
 const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
-  const { html } = props.pageContext;
+  const { title, html, date } = props.pageContext;
   console.log(props);
   return (
-    <Layout>
-      <PostHeader {...props} />
+    <Layout pageTitle={title} isPost={true}>
+      <Date>{date}</Date>
       <div dangerouslySetInnerHTML={{ __html: html }} />
       <Utterances repo='eun-seong/TIL' />
     </Layout>

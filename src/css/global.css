@@ -6,6 +6,7 @@ html {
   font: 112.5%/1.45em georgia, serif, sans-serif;
   box-sizing: border-box;
   overflow-y: scroll;
+  height: 100%;
 }
 body {
   margin: 0;
@@ -21,6 +22,7 @@ body {
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   line-height: 1.7rem;
+  height: 100%;
 }
 article,
 aside,
@@ -441,4 +443,9 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+#___gatsby,
+#gatsby-focus-wrapper {
+  height: 100%;
 }

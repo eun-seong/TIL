@@ -3,10 +3,34 @@ import styled from 'styled-components';
 import PropTypes, { ReactNodeLike } from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from './header';
+import Header from './Header';
+import Footer from './Footer';
+import Divider from './Divider';
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  height: 100%;
+`;
+
+const Title = styled.div`
+  display: flex;
+  justify-content: center;
+  text-justify: center;
+  font-size: 1.6rem;
+  margin-bottom: 1.45rem;
+`;
+
+const PostTitle = styled.h1`
+  color: rebeccapurple;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.45rem;
+`;
+
+const Main = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
   max-width: 48rem;
   padding: 1rem;
@@ -14,9 +38,11 @@ const Wrapper = styled.div`
 
 interface IProps {
   children: ReactNodeLike;
+  pageTitle: string;
+  isPost?: boolean;
 }
 
-const Layout: React.FC<IProps> = ({ children }) => {
+const Layout: React.FC<IProps> = ({ children, pageTitle, isPost }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,15 +54,13 @@ const Layout: React.FC<IProps> = ({ children }) => {
   `);
 
   return (
-    <>
+    <Wrapper>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <Wrapper>
-        <main style={{ width: '100%' }}>{children}</main>
-      </Wrapper>
-      <footer>
-        <Wrapper>© {new Date().getFullYear()}, dev_eun</Wrapper>
-      </footer>
-    </>
+      {isPost ? <PostTitle>{pageTitle}</PostTitle> : <Title>{pageTitle}</Title>}
+      <Divider />
+      <Main>{children}</Main>
+      <Footer />
+    </Wrapper>
   );
 };
 

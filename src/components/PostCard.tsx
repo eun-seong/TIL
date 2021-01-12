@@ -14,9 +14,9 @@ const Title = styled.h2`
 const TitleLink = styled(Link)`
   text-decoration: none;
   color: rebeccapurple;
-  transition: color 0.2s;
+  transition: opacity 0.2s;
   &:hover {
-    color: #996699;
+    opacity: 0.7;
   }
 `;
 
@@ -34,7 +34,7 @@ const PostCard: React.FC<IProps> = ({ node }) => {
   return (
     <li>
       <Title>
-        <TitleLink to={node.frontmatter.path}>{node.frontmatter.title}</TitleLink>
+        <TitleLink to={'/' + node.frontmatter.path}>{node.frontmatter.title}</TitleLink>
       </Title>
       <Description>{node.excerpt}</Description>
       <Date>{node.frontmatter.date}</Date>
