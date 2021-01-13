@@ -6,21 +6,21 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
     const { createPage } = actions;
 
     const { data, errors } = await graphql<Query>(`
-            {
-              allMarkdownRemark {
-                edges {
-                  node {
-                    frontmatter {
-                      path
-                      title
-                      template
-                      date
-                    }
-                    html
-                  }
-                }
-              }
+    {
+      allMarkdownRemark(filter: {frontmatter: {template: {eq: "post"}}}) {
+        edges {
+          node {
+            frontmatter {
+              path
+              title
+              date(formatString: "YYYY-MM-DD HH:mm:ss")
             }
+            html
+            id
+          }
+        }
+      }
+    }
         `);
 
     if (errors) {
