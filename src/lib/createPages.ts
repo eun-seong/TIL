@@ -7,18 +7,19 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
 
     const { data, errors } = await graphql<Query>(`
             {
-                allMarkdownRemark {
-                    edges {
-                        node {
-                            html
-                            frontmatter {
-                                path
-                                date
-                                title
-                            }
-                        }
+              allMarkdownRemark {
+                edges {
+                  node {
+                    frontmatter {
+                      path
+                      title
+                      template
+                      date
                     }
+                    html
+                  }
                 }
+              }
             }
         `);
 
@@ -27,8 +28,9 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
     }
 
     data.allMarkdownRemark.edges.forEach(({ node }) => {
+      // if(node.frontmatter.template === 'post') {
         createPage({
-            path: node.frontmatter.path,
+            path: 'posts/'+node.frontmatter.path,
             context: {
                 html: node.html,
                 title: node.frontmatter.title,
@@ -36,5 +38,6 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
             },
             component: path.resolve(__dirname, '../templates/PostTemplate.tsx'),
         });
+      // }
     });
 }

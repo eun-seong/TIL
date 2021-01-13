@@ -34,7 +34,7 @@ const PostCard: React.FC<IProps> = ({ node }) => {
   return (
     <li>
       <Title>
-        <TitleLink to={'/' + node.frontmatter.path}>{node.frontmatter.title}</TitleLink>
+        <TitleLink to={node.frontmatter.path}>{node.frontmatter.title}</TitleLink>
       </Title>
       <Description>{node.excerpt}</Description>
       <Date>{node.frontmatter.date}</Date>

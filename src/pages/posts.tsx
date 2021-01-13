@@ -14,17 +14,21 @@ const Ul = styled.ul`
 `;
 
 const LatestPostListQuery = graphql`
-  query MyQuery {
-    allMarkdownRemark(sort: { fields: frontmatter___date, order: ASC }) {
+  query PostQuery {
+    allMarkdownRemark(
+      filter: { frontmatter: { template: { eq: "post" } } }
+      sort: { order: DESC, fields: frontmatter___date }
+    ) {
       edges {
         node {
-          html
-          excerpt(pruneLength: 200, truncate: true)
           frontmatter {
             path
-            date(formatString: "YYYY-MM-DD HH:mm:ss")
             title
+            template
+            date(formatString: "YYYY-MM-DD HH:mm:ss")
           }
+          html
+          excerpt(pruneLength: 200, truncate: true)
           id
         }
       }
