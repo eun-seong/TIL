@@ -7,6 +7,7 @@ html {
   box-sizing: border-box;
   overflow-y: scroll;
   height: 100%;
+  height: -webkit-fill-available;
 }
 body {
   margin: 0;
@@ -22,7 +23,8 @@ body {
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   line-height: 1.7rem;
-  height: 100%;
+  min-height: 100%;
+  min-height: -webkit-fill-available;
 }
 article,
 aside,
@@ -447,5 +449,5 @@ pre tt:after {
 
 #___gatsby,
 #gatsby-focus-wrapper {
-  height: 100%;
+  height: 100vh;
 }

@@ -27,13 +27,15 @@ const Wrapper = styled.div`
 
 const Icons = styled.div`
   display: flex;
-  width: 20%;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
 `;
 
 const Link = styled.a`
+  display: flex;
   color: #fff;
+  margin: 0 10px;
+  justify-content: center;
 `;
 
 const Footer: React.FC<{}> = () => {

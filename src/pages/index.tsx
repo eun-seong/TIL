@@ -5,7 +5,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const IndexPage: React.FC = () => (
-  <Layout pageTitle={'Home'}>
+  <Layout pageTitle={'dev_eun'}>
     <SEO title='Home' />
     hello
   </Layout>
