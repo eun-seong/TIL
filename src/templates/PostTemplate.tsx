@@ -9,6 +9,7 @@ type IPostTemplateProps = ITemplateProps<{
   html: string;
   title: string;
   date: string;
+  category: string;
 }>;
 
 const Date = styled.div`
@@ -19,7 +20,6 @@ const Date = styled.div`
 
 const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
   const { title, html, date } = props.pageContext;
-  console.log(props);
   return (
     <Layout pageTitle={title} isPost={true}>
       <Date>{date}</Date>

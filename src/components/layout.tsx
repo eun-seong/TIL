@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Header from './Header';
 import Footer from './Footer';
 import Divider from './Divider';
+import { mainColor } from '../const';
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,7 +23,7 @@ const Title = styled.div`
 `;
 
 const PostTitle = styled.h1`
-  color: rebeccapurple;
+  color: ${mainColor};
   text-align: center;
   margin-top: 0;
   margin-bottom: 1.45rem;
@@ -58,8 +59,10 @@ const Layout: React.FC<IProps> = ({ children, pageTitle, isPost }) => {
     <Wrapper>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       {isPost ? <PostTitle>{pageTitle}</PostTitle> : <Title>{pageTitle}</Title>}
-      <Divider />
-      <Main>{children}</Main>
+      <Main>
+        <Divider />
+        {children}
+      </Main>
       <Footer />
     </Wrapper>
   );

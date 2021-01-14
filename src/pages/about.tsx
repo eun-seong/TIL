@@ -26,13 +26,12 @@ const AboutQuery = graphql`
 
 const IndexPage: React.FC = () => {
   const data = useStaticQuery<Query>(AboutQuery);
+  const contents = data.allMarkdownRemark.edges[0].node.html;
 
   return (
     <Layout pageTitle={'About'}>
       <SEO title='About' />
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div dangerouslySetInnerHTML={{ __html: node.html }} />
-      ))}
+      <div dangerouslySetInnerHTML={{ __html: contents }} />
     </Layout>
   );
 };

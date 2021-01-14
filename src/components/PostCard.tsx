@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { MarkdownRemark } from '../graphql-types';
+import { mainColor } from '../const';
 
 interface IProps {
   node: MarkdownRemark;
@@ -13,7 +14,7 @@ const Title = styled.h2`
 
 const TitleLink = styled(Link)`
   text-decoration: none;
-  color: rebeccapurple;
+  color: ${mainColor};
   transition: opacity 0.2s;
   &:hover {
     opacity: 0.7;
@@ -31,13 +32,16 @@ const Date = styled.div`
 `;
 
 const PostCard: React.FC<IProps> = ({ node }) => {
+  const linkto = node.frontmatter.category + '/' + node.frontmatter.path;
+
   return (
     <li>
       <Title>
-        <TitleLink to={node.frontmatter.path}>{node.frontmatter.title}</TitleLink>
+        <TitleLink to={linkto}>{node.frontmatter.title}</TitleLink>
       </Title>
       <Description>{node.excerpt}</Description>
       <Date>{node.frontmatter.date}</Date>
+      <hr />
     </li>
   );
 };

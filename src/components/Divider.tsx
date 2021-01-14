@@ -14,7 +14,7 @@ const Container = styled.div`
 const Line = styled.span`
   position: relative;
   top: 20px;
-  width: 30%;
+  width: 40%;
   height: 1px;
   background: ${color};
 `;

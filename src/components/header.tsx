@@ -1,13 +1,14 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
 import styled from 'styled-components';
+
+import { mainColor } from '../const';
 
 const HeaderDiv = styled.header`
   z-index: 1;
   position: sticky;
   top: 0;
-  background: rebeccapurple;
+  background: ${mainColor};
   margin-bottom: calc(1.45rem + 20px);
 `;
 

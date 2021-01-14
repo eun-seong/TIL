@@ -25,7 +25,8 @@ const LatestPostListQuery = graphql`
             path
             title
             template
-            date(formatString: "YYYY-MM-DD HH:mm:ss")
+            category
+            date(formatString: "MMM D, Y")
           }
           html
           excerpt(pruneLength: 200, truncate: true)
@@ -43,11 +44,8 @@ const PostsPage: React.FC = () => {
     <Layout pageTitle={'게시글 목록'}>
       <SEO title='Posts' />
       <Ul>
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <>
-            <PostCard node={node} />
-            <hr />
-          </>
+        {data.allMarkdownRemark.edges.map(({ node }, id) => (
+          <PostCard node={node} key={id} />
         ))}
       </Ul>
     </Layout>
