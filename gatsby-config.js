@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: `dev_eun`,
@@ -6,7 +8,23 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-typescript`,
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-vscode`,
+            options: {
+              colorTheme: 'Dark+ (default dark)',
+              injectStyles: true,
+              extensions: [],
+              extensionDataDirectory: path.resolve('extensions'),
+              logLevel: 'error',
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {

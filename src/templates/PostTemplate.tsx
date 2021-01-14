@@ -20,6 +20,7 @@ const Date = styled.div`
 
 const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {
   const { title, html, date } = props.pageContext;
+  console.log(html);
   return (
     <Layout pageTitle={title} isPost={true}>
       <Date>{date}</Date>

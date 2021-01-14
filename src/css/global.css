@@ -126,7 +126,7 @@ code,
 kbd,
 pre,
 samp {
-  font-family: 'NanumSquare', monospace;
+  font-family: 'Fira Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monaco, monospace;
   font-size: 1em;
 }
 figure,
@@ -264,19 +264,19 @@ h6 {
   line-height: 1.8;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 1.8796rem;
 }
 h2 {
   font-size: 1.62671rem;
   border-bottom: 1px solid #ccc;
 }
 h3 {
-  font-size: 1.38316rem;
+  font-size: 1.38rem;
   border-bottom: 1px solid #ccc;
 }
 h4 {
+  font-size: 1.234rem;
   margin: 1.7rem 0 0 0;
-  font-size: 1rem;
 }
 hgroup {
   margin: 0 0 1.45rem 0;
@@ -284,7 +284,6 @@ hgroup {
 }
 ul,
 ol {
-  list-style-type: disc;
   margin: 1rem 0;
   padding-left: 1.45rem;
   margin-bottom: 1.45rem;
@@ -312,15 +311,11 @@ table {
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
+  padding: 0;
   margin-bottom: 1.45rem;
   font-size: 1rem;
   line-height: 1.45rem;
   border-collapse: collapse;
-  width: 100%;
 }
 blockquote {
   margin-left: 1.45rem;
@@ -355,10 +350,11 @@ li > ol {
   margin-bottom: calc(1.45rem / 2);
   margin-top: calc(1.45rem / 2);
 }
-li > ul {
+li > ul,
+ol > ul {
   margin-left: 1.45rem;
   margin-bottom: calc(1.45rem / 2);
-  list-style-type: disc;
+  list-style-type: circle;
   margin: 0 0 1.45rem 0;
   padding-left: 1.45rem;
 }
@@ -375,8 +371,18 @@ li > p {
   margin-bottom: 0;
 }
 code {
+  font-family: 'Fira Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monaco, monospace;
   font-size: 0.85rem;
   line-height: 1.45rem;
+}
+li > code,
+td > code,
+tr > code,
+p > code {
+  color: rebeccapurple;
+  font-weight: normal;
+  text-align: center;
+  margin: auto;
 }
 kbd {
   font-size: 0.85rem;
@@ -420,24 +426,17 @@ td:last-child {
 }
 tt,
 code {
-  background-color: hsla(0, 0%, 0%, 0.04);
+  background-color: rgba(102, 51, 153, 0.1);
   border-radius: 3px;
-  font-family: 'NanumSquare', 'SFMono-Regular', Consolas, 'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo,
-    Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  font-family: 'Fira Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', 'NanumSquare', 'SFMono-Regular',
+    'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo, Courier, monospace;
+  font-weight: normal;
+  padding: 0.2em;
 }
 pre code {
+  font-family: 'Fira Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
   background: none;
   line-height: 1.42;
-}
-code:before,
-code:after,
-tt:before,
-tt:after {
-  letter-spacing: -0.2em;
-  content: ' ';
 }
 pre code:before,
 pre code:after,

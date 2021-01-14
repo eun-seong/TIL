@@ -6,12 +6,11 @@ template: 'post'
 category: 'C++'
 ---
 
-# 연산자 오버로딩
-#### 연산자 오버로딩이란?
+### 연산자 오버로딩이란?
 C++에서 제공하는 기본 타입이 아닌 **클래스 타입**에도 연산자를 사용할 수 있게 하는 문법입니다.
 
 예를 들어 아래와 같이 기본 타입에 대해서는 덧셈 연산이 가능하지만,
-```c++
+```c++ {numberLines}
 int a1 = 1;
 int a2 = 2;
 
@@ -19,7 +18,7 @@ cout << a1 + a2;
 ```
 
 아래와 같이 사용자 정의 타입인 클래스에 대해서는 연산이 불가능합니다.
-```C++
+```c++ {numberLines}
 #include <iostream>
 using namespace std;
 
@@ -49,7 +48,7 @@ int main() {
 #### 연산자 오버로딩을 왜 사용해야 되죠?
 연산자 오버로딩을 사용하면 코드의 직관성과 가독성을 좋게할 수 있습니다.
 연산자 오버로딩을 사용하지 않으면, 위 `Point` 클래스의 `point1 + point2`의 연산을 어떻게 할 수 있을까요?
-```c++
+```c++ {numberLines}
 int main() {
     Piont point1(1, 2);
     Point point2(3, 4);
@@ -71,20 +70,20 @@ int main() {
 먼저 멤버함수를 이용하는 방법으로 연산자 오버로딩을 정의해보겠습니다.
 
 기본적으로 연산자는
-```c++
+```c++ {numberLines}
 object.operator+(object2)
 ```
 처럼 생겼습니다.
 
 Point 연산을 할 경우 컴파일러는 2번째 코드처럼 인식합니다.
-```C++
+```c++ {numberLines}
 // 같은 코드
 p1 + p2;
 p1.operator+(p2);
 ```
 
 우리는 클래스에 이 연산자를 정의해주면 됩니다.
-```c++
+```c++ {numberLines}
 // 2차원 평면에 한 점을 나타내는 클래스 Point
 Class Point {
 public:
@@ -127,7 +126,7 @@ int main() {
 
 ### 단항 연산자 오버로딩
 위에서 본 예제는 이항 연산자 였습니다. 매개 변수가 앞 뒤로 있었죠?
-```c++
+```c++ {numberLines}
 p1.operator(p2);
 ```
 
@@ -148,7 +147,7 @@ p1.operator(p2);
 **전위 연산자**는 변수를 먼저 증가시킨 후 그 값을 리턴해주며, `a--` 처럼 작성합니다.    
 각각 컴파일러와 약속된 함수는 `operator++(int)`와 `operator++()` 입니다.   
 
-```c++
+```c++ {numberLines}
 class Point {
 public:
     Point(int x, int y) {
@@ -222,7 +221,7 @@ int main() {
 
 다른 예제로 `==`와 `!=` 연산자를 살펴보겠습니다.
 
-```c++
+```c++ {numberLines}
 class Point {
 public:
     // ...생략
@@ -254,7 +253,7 @@ int main() {
 
 이번 예제는 `-` 연산자 오버로딩을 **전역 함수**로 호출해보겠습니다.
 
-```c++
+```c++ {numberLines}
 class Point {
 public:
     Point(int x, int y) {
@@ -299,7 +298,7 @@ int main() {
 `Print(10)`이라는 호출 문장은 다음 세 가지로 해석될 수 있습니다.
 
 1. 함수 호출
-    ```c++
+    ```c++ {numberLines}
     void Print(int a) {
         cout << a <<'\n';
     }
@@ -309,7 +308,7 @@ int main() {
     }
     ```
 2. 함수 포인터
-    ```c++
+    ```c++ {numberLines}
     void Print(int a) {
         cout << a <<'\n';
     }
@@ -320,7 +319,7 @@ int main() {
     }
     ```
 3. 함수 객체
-    ```c++
+    ```c++ {numberLines}
     class FuncObject {
         public:
         void operator()(int arg) const {
