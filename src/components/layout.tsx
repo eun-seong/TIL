@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import PropTypes, { ReactNodeLike } from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import Footer from './Footer';
 import Header from './Header';
+import Footer from './Footer';
 import Divider from './Divider';
 import { mainColor } from '../const';
 
