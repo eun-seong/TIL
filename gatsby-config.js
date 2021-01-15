@@ -23,6 +23,12 @@ module.exports = {
               logLevel: 'error',
             },
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
         ],
       },
     },
