@@ -26,8 +26,8 @@ jobs:
         run: yarn run build
         env:
           NODE_ENV: production
-      - uses: peaceiris/actions-gh-pages@v2
+      - name: deploy
+        uses: maxheld83/ghpages@v0.3.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GIHUB_API_KEY }}
-          PUBLISH_BRANCH: gh-pages
-          PUBLISH_DIR: ./public
+          BUILD_DIR: public/
+          GH_PAT: ${{ secrets.GIHUB_API_KEY }}

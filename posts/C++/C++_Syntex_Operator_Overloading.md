@@ -293,9 +293,9 @@ int main() {
 
 
 ## STL에 필요한 주요 연산자 오버로딩
-### 함수 호출 연산자 오버로딩 : () 연산자  
-함수 호출 연산자 오버로딩은 **객체를 함수처럼 동작**하게 하는 연산자입니다.   
-`Print(10)`이라는 호출 문장은 다음 세 가지로 해석될 수 있습니다.
+### 함수 호출 연산자 오버로딩: `()` 연산자  
+`Print(10)`이라는 호출 문장은 다음 세 가지로 해석될 수 있습니다.   
+함수 호출 연산자 오버로딩은 **객체를 함수처럼 동작**하게 하는 연산자입니다. 밑 예제에서 3번에 해당됩니다.   
 
 1. 함수 호출
     ```c++ {numberLines}
@@ -319,6 +319,7 @@ int main() {
     }
     ```
 3. 함수 객체
+    * `FuncObject` 크래스에 `()` 연산자를 오버로딩하여 `main()`에서 함수처럼 사용하고 있습니다.
     ```c++ {numberLines}
     class FuncObject {
         public:
@@ -332,3 +333,199 @@ int main() {
         PrintObject(10);
     }
     ```
+
+### 배열 인덱스 연산자 오버로딩: `[]` 연산자
+`Point` 클래스의 예제로 `[0]`, `[1]`일 경우 `x`, `y`를 리턴하게 해봅시다.
+```c++ {numberLines}
+class Point {
+public:
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    void print() {
+        cout<< this.x << ", " << this.y <<'\n';
+    }
+
+    int operator[](int index) const {
+        if(index == 0) return this.x;
+        else if(index == 1) return this.y;
+        else throw "index는 0과 1만 존재합니다.";
+    }
+
+private:
+    int x;
+    int y;
+};
+
+int main() {
+    Piont point(1, 2);
+
+    cout << point[0] << ", " << point[2];   // 1, 2
+}
+```
+
+#### 주의할 점
+위 예제에서 `point[0] = 1;` 을 실행하면 에러가 발생합니다. `operator[]` 가 `int` 형으로 값을 반환하고 있기 때문입니다.   
+인덱스 연산자로 값을 수정하려면 반환하는 값이 주소값이거나 참조여야 합니다. 
+
+```c++ {numberLines}
+// Point의 멤버 함수
+int operator[](int index) const {
+    if(index == 0) return this.x;
+    else if(index == 1) return this.y;
+    else throw "index는 0과 1만 존재합니다.";
+}
+
+int& operator[](int index) {
+    return arr[index];
+}
+```
+
+### 메모리 접근 연산자: `*`, 클래스 멤버 점근 연산자: `->` 오버로딩
+지금까지 사용했던 `Point` 클래스를 동적 할당/해제 하려면 어떻게 해야 할까요?
+
+```c++ {numberLines}
+int main() {
+    Point *p1 = new Point(2, 3);
+
+    p1 -> print();
+
+    delete p1;
+    
+    return 0;
+}
+```
+
+이런식으로 객체를 동적할당한 후 직접 `delete`를 이용하여 메모리를 해제해주어야 합니다.   
+
+이 방법의 문제점은
+1. 사용 중에 함수가 종료되거나
+2. 예외가 발생하거나
+
+이러한 상황에서 할당된 메모리를 해제하지 못하는 메모리 누수가 발생할 수 있습니다.   
+
+#### 어떻게 해결할 수 있나요?
+메모리, 클래스 멤버 접근 연산자 오버로딩을 통해 스마트 포인터를 생성할 수 있습니다.   
+
+```c++ {numberLines}
+class Point {
+public:
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    void print() {
+        cout<< this.x << ", " << this.y <<'\n';
+    }
+
+private:
+    int x;
+    int y;
+};
+
+class PointPtr {
+    Point* ptr;
+public:
+    PointPtr(Point* p): ptr(p) { }
+    ~PointPtr() {
+        delete ptr;
+    }
+    Point* operator->() const {
+        return ptr;
+    }
+    Point& operator*() const {
+        return &ptr;
+    }
+};
+
+int main() {
+    PointPtr pointPtr = new Point(2, 3);
+
+    pointPtr -> print();    // 2, 3
+    (*pointPtr).print()     // 2, 3
+    
+    return 0; 
+}
+```
+
+`main()`이 종료되거나 예외가 발생하면 `PointPtr`의 소멸자가 호출되어 자동으로 인스턴스의 메모리를 해제해줍니다.   
+직접 메모리 해제를 하지 않아도 돼요! Wow
+
+## 타입 변환 연산자 오버로딩
+타입 변환 연산자를 오버로딩하면 객체의 타입을 다른 타입으로 변환할 수 있습니다.
+
+```c++ {numberLines}
+class Point {
+public:
+    Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    void print() {
+        cout<< this.x << ", " << this.y <<'\n';
+    }
+    operator int() const {
+        return x;
+    }
+
+private:
+    int x;
+    int y;
+};
+
+int main() {
+    int n = 10;
+
+    Point pt(2, 3);
+    n = pt;
+
+    cout << n;      // 2
+    
+    return 0; 
+}
+```
+
+<details style='color: #fff'>
+<summary>문제 답 보기</summary>
+
+```c++ {numberLines}
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class String {
+    char* str;
+
+public:
+    String(const char* s) {
+        str = new char[strlen(s) + 1];
+        strcpy_s(str, strlen(s) + 1, s);
+    }
+    ~String() {
+        delete[] str;
+    }
+    operator char* () const {
+        return str;
+    }
+    bool operator=(const char* s) {
+        delete[] str;
+
+        str = new char[strlen(s) + 1];
+        
+        return strcpy_s(str, strlen(s) + 1, s);
+    }
+};
+
+int main() {
+    String s("Hello");
+    const char* sz = s;
+    cout << sz << '\n';
+
+    const char* sz2 = "Wolrd";
+    s = sz2;
+    cout << s << '\n';
+}
+```
+</details>
