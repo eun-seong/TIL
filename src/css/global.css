@@ -384,6 +384,15 @@ p > code {
   text-align: center;
   margin: auto;
 }
+h1 > code,
+h2 > code,
+h3 > code,
+h4 > code {
+  color: rebeccapurple;
+  font-weight: bold;
+  line-height: 1.45rem;
+  font-size: inherit;
+}
 kbd {
   font-size: 0.85rem;
   line-height: 1.45rem;
@@ -431,7 +440,7 @@ code {
   font-family: 'Fira Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New', 'NanumSquare', 'SFMono-Regular',
     'Roboto Mono', 'Droid Sans Mono', 'Liberation Mono', Menlo, Courier, monospace;
   font-weight: normal;
-  padding: 0.2em;
+  padding: 0.1rem 0.2em;
 }
 pre code {
   font-family: 'Fira Mono', source-code-pro, Menlo, Monaco, Consolas, 'Courier New';
