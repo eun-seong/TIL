@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  pathPrefix: '/TIL',
   siteMetadata: {
     title: `dev_eun`,
     description: `오늘보다 발전된 내일을 만들기 위한 dev_eun의 TIL 블로그`,
@@ -65,5 +66,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-  pathPrefix: '/TIL',
 };
