@@ -26,6 +26,8 @@ jobs:
         run: yarn build --prefix-paths
         env:
           NODE_ENV: production
+      - name: copy google search html
+        run: cp src/pages/google62381c012e3c46da.html public/
       - uses: peaceiris/actions-gh-pages@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GIHUB_API_KEY }}
