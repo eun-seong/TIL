@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://eun-seong.github.io/TIL/sitemap.xml
+Host: https://eun-seong.github.io
