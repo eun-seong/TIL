@@ -6,8 +6,10 @@ module.exports = {
     title: `dev_eun`,
     description: `오늘보다 발전된 내일을 만들기 위한 dev_eun의 TIL 블로그`,
     author: `@eun-seong`,
+    siteUrl: `https://eun-seong.github.io/TIL/`,
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -72,13 +74,25 @@ module.exports = {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
         // You can add multiple tracking ids and a pageview event will be fired for all of them.
-        trackingIds: 'G-T4NZQC7Q38',
-        head: false, // head에 tracking script를 넣고 싶다면 true로 변경
-        anonymize: true,
+        trackingIds: ['G-T4NZQC7Q38'],
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: false,
+          // Setting this parameter is also optional
+          respectDNT: true,
+          // Avoids sending pageview hits from custom paths
+          exclude: ['/preview/**', '/do-not-track/me/too/'],
+        },
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://eun-seong.github.io/TIL',
+        sitemap: 'https://eun-seong.github.io/TIL/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
   ],
 };

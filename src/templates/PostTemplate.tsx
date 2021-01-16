@@ -15,7 +15,7 @@ type IPostTemplateProps = ITemplateProps<{
 const Date = styled.div`
   color: #aaa;
   font-size: 0.8rem;
-  margin-left: 2rem;
+  margin: 1rem 0 3rem 2rem;
 `;
 
 const PostTemplate: React.FC<IPostTemplateProps> = React.memo((props) => {

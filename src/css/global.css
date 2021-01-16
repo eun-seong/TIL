@@ -318,14 +318,10 @@ table {
   border-collapse: collapse;
 }
 blockquote {
-  margin-left: 1.45rem;
-  margin-right: 1.45rem;
-  margin-top: 0;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin: 0 0 1rem 0;
+  padding: 0 1em;
+  color: #6a737d;
+  border-left: 0.25em solid #dfe2e5;
 }
 b {
   font-weight: 800;
@@ -359,9 +355,6 @@ ol > ul {
   padding-left: 1.45rem;
 }
 blockquote *:last-child {
-  margin-bottom: 0;
-}
-li *:last-child {
   margin-bottom: 0;
 }
 p *:last-child {
