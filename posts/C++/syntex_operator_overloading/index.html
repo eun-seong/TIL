@@ -348,21 +348,19 @@ data-styled.g22[id="PostTemplate__Date-sc-1i2kdhp-0"]{content:"bJxuXl,"}/*!sc*/
 <li>
 <p>함수 객체</p>
 <ul>
-<li>
-<p><code>FuncObject</code> 크래스에 <code>()</code> 연산자를 오버로딩하여 <code>main()</code>에서 함수처럼 사용하고 있습니다.</p>
-<pre class="grvsc-container default-dark" data-language="c++" data-index="12"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="1"></span><span class="grvsc-source"><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">FuncObject</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="2"></span><span class="grvsc-source"><span class="mtk4">public:</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="3"></span><span class="grvsc-source"><span class="mtk4">void</span><span class="mtk1"> </span><span class="mtk15">operator</span><span class="mtk1">()(</span><span class="mtk4">int</span><span class="mtk1"> </span><span class="mtk12">arg</span><span class="mtk1">) </span><span class="mtk4">const</span><span class="mtk1"> {</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="4"></span><span class="grvsc-source"><span class="mtk1">    cout &lt;&lt; arg &lt;&lt;</span><span class="mtk8">&#39;</span><span class="mtk6">\n</span><span class="mtk8">&#39;</span><span class="mtk1">;</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="5"></span><span class="grvsc-source"><span class="mtk1">}</span></span></span>
-<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="6"></span><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
-</li>
+<li><code>FuncObject</code> 크래스에 <code>()</code> 연산자를 오버로딩하여 <code>main()</code>에서 함수처럼 사용하고 있습니다.</li>
 </ul>
-<p>int main() {
-FuncObject PrintObject;
-PrintObject(10);
-}</p>
-<pre><code></code></pre>
+<pre class="grvsc-container default-dark" data-language="c++" data-index="12"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="1"></span><span class="grvsc-source"><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">FuncObject</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="2"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">public:</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="3"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">void</span><span class="mtk1"> </span><span class="mtk15">operator</span><span class="mtk1">()(</span><span class="mtk4">int</span><span class="mtk1"> </span><span class="mtk12">arg</span><span class="mtk1">) </span><span class="mtk4">const</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="4"></span><span class="grvsc-source"><span class="mtk1">        cout &lt;&lt; arg &lt;&lt;</span><span class="mtk8">&#39;</span><span class="mtk6">\n</span><span class="mtk8">&#39;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="5"></span><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="6"></span><span class="grvsc-source"><span class="mtk1">}</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="7"></span><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="8"></span><span class="grvsc-source"><span class="mtk4">int</span><span class="mtk1"> </span><span class="mtk11">main</span><span class="mtk1">() {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="9"></span><span class="grvsc-source"><span class="mtk1">    FuncObject PrintObject;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="10"></span><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk11">PrintObject</span><span class="mtk1">(</span><span class="mtk7">10</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-gutter-pad"></span><span class="grvsc-gutter grvsc-line-number" aria-hidden="true" data-content="11"></span><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
 </li>
 </ol>
 <h3>배열 인덱스 연산자 오버로딩: <code>[]</code> 연산자</h3>
