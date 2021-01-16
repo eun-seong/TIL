@@ -320,6 +320,7 @@ int main() {
     ```
 3. 함수 객체
     * `FuncObject` 크래스에 `()` 연산자를 오버로딩하여 `main()`에서 함수처럼 사용하고 있습니다.
+  
     ```c++ {numberLines}
     class FuncObject {
         public:

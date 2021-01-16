@@ -46,7 +46,7 @@ $ gatsby build --prefix-path
 이렇게 하지 않으면 로컬에서는 잘 실행되는 듯 하지만, 깃에 배포할 때 루트 디렉토리가 잘못 설정되어 404 오류가 발생합니다.
 
 
-#### 2 deploy.yml 파일 생성
+#### 2. deploy.yml 파일 생성
 이제 프로젝트의 루프 폴더에 `.github/workflows` 폴더를 생성하고 그 안에 `deploy.yml` 파일을 생성합니다.   
 
 이 파일에 들어갈 내용을 한 번 살펴 볼게요.   
@@ -112,7 +112,7 @@ jobs:
 
 자 모두 완료되었으면 다음으로 넘어가 봅시다.
 
-#### Personal Access Token(PAT) 생성하기
+#### 3. Personal Access Token(PAT) 생성하기
 자신의 깃허브로 들어가서   
 Profile Settings -> Developer Settings -> Personal access token   
 으로 이동합니다.   
@@ -130,7 +130,7 @@ scope으로는 `repo`만 설정해주었습니다.
 
 ![img_gatsby_github_page_action_2](./images/img_gatsby_github_page_action_2.png)  
 
-#### Secret 추가하기
+#### 4. Secret 추가하기
 이제 자신의 개츠비 repo로 이동합니다.   
 repository Settings -> Secrets   
 
@@ -140,7 +140,7 @@ Name에 이름을 설정하시고, 아까 복사해두었던 토큰을 Value에 
 
 이제 준비는 다 되었습니다!
 
-#### push 하기
+#### 5. push 하기
 이제 프로젝트 터미널로 이동하여 git에 push를 합니다.   
 액션이 잘 수행되었는지 확인하려면 해당 레포지토리의 Action으로 들어가시면 됩니다.   
 
@@ -155,3 +155,4 @@ Name에 이름을 설정하시고, 아까 복사해두었던 토큰을 Value에 
 
 실패했다면 해당 명령어를 클릭하여 오류 메세지를 확인해보시고,   
 성공했다면 축하드립니다! 이제 빌드/배포를 직접하지 않아도 push만 하면 자동으로 실행됩니다.   
+
