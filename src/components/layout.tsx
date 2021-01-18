@@ -23,10 +23,13 @@ const Title = styled.div`
 `;
 
 const PostTitle = styled.h1`
-  color: ${mainColor};
+  display: flex;
+  justify-content: center;
+  text-justify: center;
   text-align: center;
   margin-top: 0;
   margin-bottom: 1.45rem;
+  color: ${mainColor};
 `;
 
 const Main = styled.div`
@@ -58,8 +61,8 @@ const Layout: React.FC<IProps> = ({ children, pageTitle, isPost }) => {
   return (
     <Wrapper>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      {isPost ? <PostTitle>{pageTitle}</PostTitle> : <Title>{pageTitle}</Title>}
       <Main>
+        {isPost ? <PostTitle>{pageTitle}</PostTitle> : <Title>{pageTitle}</Title>}
         <Divider />
         {children}
       </Main>

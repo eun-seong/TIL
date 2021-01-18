@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
+import { Query, MarkdownRemarkEdge } from '../graphql-types';
 
 import Layout from '../components/layout';
-import Utterances from '../components/utterances';
 import { ITemplateProps } from '../interface';
+import PostCard from '../components/PostCard';
 
 type IPostListTemplateProps = ITemplateProps<{
   fieldValue: string;
+  edges: MarkdownRemarkEdge[];
 }>;
 
 const Date = styled.div`
@@ -16,11 +19,13 @@ const Date = styled.div`
 `;
 
 const PostListTemplate: React.FC<IPostListTemplateProps> = React.memo((props) => {
-  const { fieldValue } = props.pageContext;
-  console.log(fieldValue);
+  const { edges, fieldValue } = props.pageContext;
+  console.log(fieldValue, edges);
   return (
-    <Layout pageTitle={fieldValue} isPost={true}>
-      test
+    <Layout pageTitle={fieldValue} isPost={false}>
+      {edges.map(({ node }, index) => (
+        <PostCard node={node} key={index} />
+      ))}
     </Layout>
   );
 });

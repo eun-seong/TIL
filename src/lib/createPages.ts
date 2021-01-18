@@ -20,13 +20,13 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
               }
               html
               id
+              excerpt(pruneLength: 200)
             }
           }
         }
       }
     }
-    
-        `);
+    `);
 
     if (errors) {
         throw errors;
@@ -51,8 +51,9 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
         path: 'posts/' + fieldValue,
         context: {
           fieldValue: fieldValue,
+          edges: edges,
         },
         component: path.resolve(__dirname, '../templates/PostListTemplate.tsx'),
-    });
+      });
     });
 }

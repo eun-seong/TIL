@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
 import { Query } from '../graphql-types';
 
-import PostCard from '../components/PostCard';
+import PostList from '../components/PostList';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -39,7 +39,7 @@ const PostsPage: React.FC = () => {
       <SEO title='Posts' />
       <Ul>
         {data.allMarkdownRemark.group.map(({ edges, fieldValue }, id) => (
-          <PostCard edges={edges} fieldValue={fieldValue} key={id} />
+          <PostList edges={edges} fieldValue={fieldValue} key={id} />
         ))}
       </Ul>
     </Layout>
