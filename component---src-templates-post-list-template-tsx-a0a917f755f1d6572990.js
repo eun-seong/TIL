@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{"/JOT":function(e,t,a){"use strict";a.r(t);var o=a("q1tI"),n=a.n(o),i=a("vOnD"),s=a("9Dj+"),l=(i.a.div.withConfig({displayName:"PostListTemplate__Date",componentId:"sc-1xblp75-0"})(["color:#aaa;font-size:0.8rem;margin:1rem 0 3rem 2rem;"]),n.a.memo((function(e){var t=e.pageContext.fieldValue;return console.log(t),n.a.createElement(s.a,{pageTitle:t,isPost:!0},"test")})));l.displayName="PostListTemplate",t.default=l}}]);
+//# sourceMappingURL=component---src-templates-post-list-template-tsx-a0a917f755f1d6572990.js.map
