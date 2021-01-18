@@ -1,48 +1,42 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { MarkdownRemark } from '../graphql-types';
+import { MarkdownRemarkEdge } from '../graphql-types';
 import { mainColor } from '../const';
 
 interface IProps {
-  node: MarkdownRemark;
+  edges: MarkdownRemarkEdge[];
+  fieldValue: string;
 }
 
-const Title = styled.h2`
+const Category = styled(Link)`
   border-bottom: 0px;
+  color: ${mainColor};
+  margin: 0 0 0.5rem 0;
 `;
 
 const TitleLink = styled(Link)`
+  display: block;
+  border-bottom: 0px;
   text-decoration: none;
-  color: ${mainColor};
+  color: black;
   transition: opacity 0.2s;
   &:hover {
     opacity: 0.7;
   }
+  margin: 0.1rem 0;
 `;
 
-const Description = styled.div`
-  font-size: 1rem;
-  margin-bottom: 0.6rem;
-`;
-
-const Date = styled.div`
-  font-size: 0.9rem;
-  color: #999;
-`;
-
-const PostCard: React.FC<IProps> = ({ node }) => {
-  const linkto = node.frontmatter.category + '/' + node.frontmatter.path;
-
+const PostCard: React.FC<IProps> = ({ edges, fieldValue }) => {
   return (
-    <li>
-      <Title>
-        <TitleLink to={linkto}>{node.frontmatter.title}</TitleLink>
-      </Title>
-      <Description>{node.excerpt}</Description>
-      <Date>{node.frontmatter.date}</Date>
+    <>
+      <Category to={fieldValue}>{fieldValue}</Category>
+      {edges.map(({ node }, id) => {
+        const linkto = fieldValue + '/' + node.frontmatter.path;
+        return <TitleLink to={linkto}>{node.frontmatter.title}</TitleLink>;
+      })}
       <hr />
-    </li>
+    </>
   );
 };
 

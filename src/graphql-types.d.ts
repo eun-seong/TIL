@@ -3717,12 +3717,14 @@ export type SitePageContext = {
   html?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['String']>;
+  fieldValue?: Maybe<Scalars['String']>;
 };
 
 export type SitePageContextFilterInput = {
   html?: Maybe<StringQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<StringQueryOperatorInput>;
+  fieldValue?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageEdge = {
@@ -3828,6 +3830,7 @@ export type SitePageFieldsEnum =
   | 'context___html'
   | 'context___title'
   | 'context___date'
+  | 'context___fieldValue'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'

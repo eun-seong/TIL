@@ -1,5 +1,5 @@
 ---
-title: 'C++ 문법: 함수 포인터'
+title: '[C++] 함수 포인터'
 path: 'syntex_function_pointer'
 date: '2021-01-15 13:41:37'
 template: 'post'

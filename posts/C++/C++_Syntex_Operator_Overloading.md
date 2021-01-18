@@ -1,5 +1,5 @@
 ---
-title: 'C++ 문법: 연산자 오버로딩'
+title: '[C++] 연산자 오버로딩'
 path: 'syntex_operator_overloading'
 date: '2021-01-14 17:27:09'
 template: 'post'

@@ -15,23 +15,17 @@ const Ul = styled.ul`
 
 const LatestPostListQuery = graphql`
   query PostQuery {
-    allMarkdownRemark(
-      filter: { frontmatter: { template: { eq: "post" } } }
-      sort: { order: DESC, fields: frontmatter___date }
-    ) {
-      edges {
-        node {
-          frontmatter {
-            path
-            title
-            template
-            category
-            date(formatString: "MMM D, Y")
+    allMarkdownRemark(sort: { order: DESC, fields: frontmatter___date }) {
+      group(field: frontmatter___category, limit: 10) {
+        edges {
+          node {
+            frontmatter {
+              title
+              path
+            }
           }
-          html
-          excerpt(pruneLength: 200, truncate: true)
-          id
         }
+        fieldValue
       }
     }
   }
@@ -44,8 +38,8 @@ const PostsPage: React.FC = () => {
     <Layout pageTitle={'게시글 목록'}>
       <SEO title='Posts' />
       <Ul>
-        {data.allMarkdownRemark.edges.map(({ node }, id) => (
-          <PostCard node={node} key={id} />
+        {data.allMarkdownRemark.group.map(({ edges, fieldValue }, id) => (
+          <PostCard edges={edges} fieldValue={fieldValue} key={id} />
         ))}
       </Ul>
     </Layout>
