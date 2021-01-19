@@ -551,6 +551,8 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___frontmatter___title'
   | 'childrenMarkdownRemark___frontmatter___path'
   | 'childrenMarkdownRemark___frontmatter___date'
+  | 'childrenMarkdownRemark___frontmatter___template'
+  | 'childrenMarkdownRemark___frontmatter___category'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
   | 'childrenMarkdownRemark___fileAbsolutePath'
@@ -607,6 +609,8 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___path'
   | 'childMarkdownRemark___frontmatter___date'
+  | 'childMarkdownRemark___frontmatter___template'
+  | 'childMarkdownRemark___frontmatter___category'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
   | 'childMarkdownRemark___fileAbsolutePath'
@@ -1000,6 +1004,734 @@ export type FloatQueryOperatorInput = {
   lte?: Maybe<Scalars['Float']>;
   in?: Maybe<Array<Maybe<Scalars['Float']>>>;
   nin?: Maybe<Array<Maybe<Scalars['Float']>>>;
+};
+
+export type GrvscCodeBlock = Node & {
+  __typename?: 'GRVSCCodeBlock';
+  index: Scalars['Int'];
+  html: Scalars['String'];
+  text: Scalars['String'];
+  preClassName: Scalars['String'];
+  codeClassName: Scalars['String'];
+  language?: Maybe<Scalars['String']>;
+  meta?: Maybe<Scalars['JSON']>;
+  defaultTheme: GrvscTheme;
+  additionalThemes: Array<GrvscTheme>;
+  tokenizedLines?: Maybe<Array<GrvscTokenizedLine>>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+export type GrvscCodeBlockConnection = {
+  __typename?: 'GRVSCCodeBlockConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<GrvscCodeBlockEdge>;
+  nodes: Array<GrvscCodeBlock>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<GrvscCodeBlockGroupConnection>;
+};
+
+
+export type GrvscCodeBlockConnectionDistinctArgs = {
+  field: GrvscCodeBlockFieldsEnum;
+};
+
+
+export type GrvscCodeBlockConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: GrvscCodeBlockFieldsEnum;
+};
+
+export type GrvscCodeBlockEdge = {
+  __typename?: 'GRVSCCodeBlockEdge';
+  next?: Maybe<GrvscCodeBlock>;
+  node: GrvscCodeBlock;
+  previous?: Maybe<GrvscCodeBlock>;
+};
+
+export type GrvscCodeBlockFieldsEnum = 
+  | 'index'
+  | 'html'
+  | 'text'
+  | 'preClassName'
+  | 'codeClassName'
+  | 'language'
+  | 'meta'
+  | 'defaultTheme___path'
+  | 'defaultTheme___identifier'
+  | 'defaultTheme___conditions'
+  | 'defaultTheme___conditions___condition'
+  | 'defaultTheme___conditions___value'
+  | 'additionalThemes'
+  | 'additionalThemes___path'
+  | 'additionalThemes___identifier'
+  | 'additionalThemes___conditions'
+  | 'additionalThemes___conditions___condition'
+  | 'additionalThemes___conditions___value'
+  | 'tokenizedLines'
+  | 'tokenizedLines___tokens'
+  | 'tokenizedLines___tokens___text'
+  | 'tokenizedLines___tokens___startIndex'
+  | 'tokenizedLines___tokens___endIndex'
+  | 'tokenizedLines___tokens___scopes'
+  | 'tokenizedLines___tokens___html'
+  | 'tokenizedLines___tokens___className'
+  | 'tokenizedLines___tokens___defaultThemeTokenData___themeIdentifier'
+  | 'tokenizedLines___tokens___defaultThemeTokenData___className'
+  | 'tokenizedLines___tokens___defaultThemeTokenData___meta'
+  | 'tokenizedLines___tokens___defaultThemeTokenData___color'
+  | 'tokenizedLines___tokens___defaultThemeTokenData___bold'
+  | 'tokenizedLines___tokens___defaultThemeTokenData___italic'
+  | 'tokenizedLines___tokens___defaultThemeTokenData___underline'
+  | 'tokenizedLines___tokens___additionalThemeTokenData'
+  | 'tokenizedLines___tokens___additionalThemeTokenData___themeIdentifier'
+  | 'tokenizedLines___tokens___additionalThemeTokenData___className'
+  | 'tokenizedLines___tokens___additionalThemeTokenData___meta'
+  | 'tokenizedLines___tokens___additionalThemeTokenData___color'
+  | 'tokenizedLines___tokens___additionalThemeTokenData___bold'
+  | 'tokenizedLines___tokens___additionalThemeTokenData___italic'
+  | 'tokenizedLines___tokens___additionalThemeTokenData___underline'
+  | 'tokenizedLines___gutterCells'
+  | 'tokenizedLines___gutterCells___className'
+  | 'tokenizedLines___gutterCells___text'
+  | 'tokenizedLines___text'
+  | 'tokenizedLines___html'
+  | 'tokenizedLines___attrs'
+  | 'tokenizedLines___className'
+  | 'tokenizedLines___data'
+  | 'tokenizedLines___isHighlighted'
+  | 'tokenizedLines___lineNumber'
+  | 'tokenizedLines___diff'
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type';
+
+export type GrvscCodeBlockFilterInput = {
+  index?: Maybe<IntQueryOperatorInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+  preClassName?: Maybe<StringQueryOperatorInput>;
+  codeClassName?: Maybe<StringQueryOperatorInput>;
+  language?: Maybe<StringQueryOperatorInput>;
+  meta?: Maybe<JsonQueryOperatorInput>;
+  defaultTheme?: Maybe<GrvscThemeFilterInput>;
+  additionalThemes?: Maybe<GrvscThemeFilterListInput>;
+  tokenizedLines?: Maybe<GrvscTokenizedLineFilterListInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+export type GrvscCodeBlockGroupConnection = {
+  __typename?: 'GRVSCCodeBlockGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<GrvscCodeBlockEdge>;
+  nodes: Array<GrvscCodeBlock>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type GrvscCodeBlockSortInput = {
+  fields?: Maybe<Array<Maybe<GrvscCodeBlockFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type GrvscCodeSpan = Node & {
+  __typename?: 'GRVSCCodeSpan';
+  index: Scalars['Int'];
+  html: Scalars['String'];
+  text: Scalars['String'];
+  className?: Maybe<Scalars['String']>;
+  language?: Maybe<Scalars['String']>;
+  defaultTheme: GrvscTheme;
+  additionalThemes: Array<GrvscTheme>;
+  tokens: Array<GrvscToken>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+export type GrvscCodeSpanConnection = {
+  __typename?: 'GRVSCCodeSpanConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<GrvscCodeSpanEdge>;
+  nodes: Array<GrvscCodeSpan>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<GrvscCodeSpanGroupConnection>;
+};
+
+
+export type GrvscCodeSpanConnectionDistinctArgs = {
+  field: GrvscCodeSpanFieldsEnum;
+};
+
+
+export type GrvscCodeSpanConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: GrvscCodeSpanFieldsEnum;
+};
+
+export type GrvscCodeSpanEdge = {
+  __typename?: 'GRVSCCodeSpanEdge';
+  next?: Maybe<GrvscCodeSpan>;
+  node: GrvscCodeSpan;
+  previous?: Maybe<GrvscCodeSpan>;
+};
+
+export type GrvscCodeSpanFieldsEnum = 
+  | 'index'
+  | 'html'
+  | 'text'
+  | 'className'
+  | 'language'
+  | 'defaultTheme___path'
+  | 'defaultTheme___identifier'
+  | 'defaultTheme___conditions'
+  | 'defaultTheme___conditions___condition'
+  | 'defaultTheme___conditions___value'
+  | 'additionalThemes'
+  | 'additionalThemes___path'
+  | 'additionalThemes___identifier'
+  | 'additionalThemes___conditions'
+  | 'additionalThemes___conditions___condition'
+  | 'additionalThemes___conditions___value'
+  | 'tokens'
+  | 'tokens___text'
+  | 'tokens___startIndex'
+  | 'tokens___endIndex'
+  | 'tokens___scopes'
+  | 'tokens___html'
+  | 'tokens___className'
+  | 'tokens___defaultThemeTokenData___themeIdentifier'
+  | 'tokens___defaultThemeTokenData___className'
+  | 'tokens___defaultThemeTokenData___meta'
+  | 'tokens___defaultThemeTokenData___color'
+  | 'tokens___defaultThemeTokenData___bold'
+  | 'tokens___defaultThemeTokenData___italic'
+  | 'tokens___defaultThemeTokenData___underline'
+  | 'tokens___additionalThemeTokenData'
+  | 'tokens___additionalThemeTokenData___themeIdentifier'
+  | 'tokens___additionalThemeTokenData___className'
+  | 'tokens___additionalThemeTokenData___meta'
+  | 'tokens___additionalThemeTokenData___color'
+  | 'tokens___additionalThemeTokenData___bold'
+  | 'tokens___additionalThemeTokenData___italic'
+  | 'tokens___additionalThemeTokenData___underline'
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type';
+
+export type GrvscCodeSpanFilterInput = {
+  index?: Maybe<IntQueryOperatorInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+  className?: Maybe<StringQueryOperatorInput>;
+  language?: Maybe<StringQueryOperatorInput>;
+  defaultTheme?: Maybe<GrvscThemeFilterInput>;
+  additionalThemes?: Maybe<GrvscThemeFilterListInput>;
+  tokens?: Maybe<GrvscTokenFilterListInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+export type GrvscCodeSpanGroupConnection = {
+  __typename?: 'GRVSCCodeSpanGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<GrvscCodeSpanEdge>;
+  nodes: Array<GrvscCodeSpan>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type GrvscCodeSpanSortInput = {
+  fields?: Maybe<Array<Maybe<GrvscCodeSpanFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type GrvscDiff = 
+  | 'ADD'
+  | 'DEL';
+
+export type GrvscDiffQueryOperatorInput = {
+  eq?: Maybe<GrvscDiff>;
+  ne?: Maybe<GrvscDiff>;
+  in?: Maybe<Array<Maybe<GrvscDiff>>>;
+  nin?: Maybe<Array<Maybe<GrvscDiff>>>;
+};
+
+export type GrvscGutterCell = {
+  __typename?: 'GRVSCGutterCell';
+  className?: Maybe<Scalars['String']>;
+  text?: Maybe<Scalars['String']>;
+};
+
+export type GrvscGutterCellFilterInput = {
+  className?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+};
+
+export type GrvscGutterCellFilterListInput = {
+  elemMatch?: Maybe<GrvscGutterCellFilterInput>;
+};
+
+export type GrvscStylesheet = Node & {
+  __typename?: 'GRVSCStylesheet';
+  css: Scalars['String'];
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
+export type GrvscStylesheetConnection = {
+  __typename?: 'GRVSCStylesheetConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<GrvscStylesheetEdge>;
+  nodes: Array<GrvscStylesheet>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  group: Array<GrvscStylesheetGroupConnection>;
+};
+
+
+export type GrvscStylesheetConnectionDistinctArgs = {
+  field: GrvscStylesheetFieldsEnum;
+};
+
+
+export type GrvscStylesheetConnectionGroupArgs = {
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+  field: GrvscStylesheetFieldsEnum;
+};
+
+export type GrvscStylesheetEdge = {
+  __typename?: 'GRVSCStylesheetEdge';
+  next?: Maybe<GrvscStylesheet>;
+  node: GrvscStylesheet;
+  previous?: Maybe<GrvscStylesheet>;
+};
+
+export type GrvscStylesheetFieldsEnum = 
+  | 'css'
+  | 'id'
+  | 'parent___id'
+  | 'parent___parent___id'
+  | 'parent___parent___parent___id'
+  | 'parent___parent___parent___children'
+  | 'parent___parent___children'
+  | 'parent___parent___children___id'
+  | 'parent___parent___children___children'
+  | 'parent___parent___internal___content'
+  | 'parent___parent___internal___contentDigest'
+  | 'parent___parent___internal___description'
+  | 'parent___parent___internal___fieldOwners'
+  | 'parent___parent___internal___ignoreType'
+  | 'parent___parent___internal___mediaType'
+  | 'parent___parent___internal___owner'
+  | 'parent___parent___internal___type'
+  | 'parent___children'
+  | 'parent___children___id'
+  | 'parent___children___parent___id'
+  | 'parent___children___parent___children'
+  | 'parent___children___children'
+  | 'parent___children___children___id'
+  | 'parent___children___children___children'
+  | 'parent___children___internal___content'
+  | 'parent___children___internal___contentDigest'
+  | 'parent___children___internal___description'
+  | 'parent___children___internal___fieldOwners'
+  | 'parent___children___internal___ignoreType'
+  | 'parent___children___internal___mediaType'
+  | 'parent___children___internal___owner'
+  | 'parent___children___internal___type'
+  | 'parent___internal___content'
+  | 'parent___internal___contentDigest'
+  | 'parent___internal___description'
+  | 'parent___internal___fieldOwners'
+  | 'parent___internal___ignoreType'
+  | 'parent___internal___mediaType'
+  | 'parent___internal___owner'
+  | 'parent___internal___type'
+  | 'children'
+  | 'children___id'
+  | 'children___parent___id'
+  | 'children___parent___parent___id'
+  | 'children___parent___parent___children'
+  | 'children___parent___children'
+  | 'children___parent___children___id'
+  | 'children___parent___children___children'
+  | 'children___parent___internal___content'
+  | 'children___parent___internal___contentDigest'
+  | 'children___parent___internal___description'
+  | 'children___parent___internal___fieldOwners'
+  | 'children___parent___internal___ignoreType'
+  | 'children___parent___internal___mediaType'
+  | 'children___parent___internal___owner'
+  | 'children___parent___internal___type'
+  | 'children___children'
+  | 'children___children___id'
+  | 'children___children___parent___id'
+  | 'children___children___parent___children'
+  | 'children___children___children'
+  | 'children___children___children___id'
+  | 'children___children___children___children'
+  | 'children___children___internal___content'
+  | 'children___children___internal___contentDigest'
+  | 'children___children___internal___description'
+  | 'children___children___internal___fieldOwners'
+  | 'children___children___internal___ignoreType'
+  | 'children___children___internal___mediaType'
+  | 'children___children___internal___owner'
+  | 'children___children___internal___type'
+  | 'children___internal___content'
+  | 'children___internal___contentDigest'
+  | 'children___internal___description'
+  | 'children___internal___fieldOwners'
+  | 'children___internal___ignoreType'
+  | 'children___internal___mediaType'
+  | 'children___internal___owner'
+  | 'children___internal___type'
+  | 'internal___content'
+  | 'internal___contentDigest'
+  | 'internal___description'
+  | 'internal___fieldOwners'
+  | 'internal___ignoreType'
+  | 'internal___mediaType'
+  | 'internal___owner'
+  | 'internal___type';
+
+export type GrvscStylesheetFilterInput = {
+  css?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+export type GrvscStylesheetGroupConnection = {
+  __typename?: 'GRVSCStylesheetGroupConnection';
+  totalCount: Scalars['Int'];
+  edges: Array<GrvscStylesheetEdge>;
+  nodes: Array<GrvscStylesheet>;
+  pageInfo: PageInfo;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
+export type GrvscStylesheetSortInput = {
+  fields?: Maybe<Array<Maybe<GrvscStylesheetFieldsEnum>>>;
+  order?: Maybe<Array<Maybe<SortOrderEnum>>>;
+};
+
+export type GrvscTheme = {
+  __typename?: 'GRVSCTheme';
+  path: Scalars['String'];
+  identifier: Scalars['String'];
+  conditions: Array<GrvscThemeCondition>;
+};
+
+export type GrvscThemeArgument = {
+  identifier: Scalars['String'];
+  conditions: Array<Scalars['String']>;
+};
+
+export type GrvscThemeCondition = {
+  __typename?: 'GRVSCThemeCondition';
+  condition: GrvscThemeConditionKind;
+  value?: Maybe<Scalars['String']>;
+};
+
+export type GrvscThemeConditionFilterInput = {
+  condition?: Maybe<GrvscThemeConditionKindQueryOperatorInput>;
+  value?: Maybe<StringQueryOperatorInput>;
+};
+
+export type GrvscThemeConditionFilterListInput = {
+  elemMatch?: Maybe<GrvscThemeConditionFilterInput>;
+};
+
+export type GrvscThemeConditionKind = 
+  | 'default'
+  | 'matchMedia'
+  | 'parentSelector';
+
+export type GrvscThemeConditionKindQueryOperatorInput = {
+  eq?: Maybe<GrvscThemeConditionKind>;
+  ne?: Maybe<GrvscThemeConditionKind>;
+  in?: Maybe<Array<Maybe<GrvscThemeConditionKind>>>;
+  nin?: Maybe<Array<Maybe<GrvscThemeConditionKind>>>;
+};
+
+export type GrvscThemeFilterInput = {
+  path?: Maybe<StringQueryOperatorInput>;
+  identifier?: Maybe<StringQueryOperatorInput>;
+  conditions?: Maybe<GrvscThemeConditionFilterListInput>;
+};
+
+export type GrvscThemeFilterListInput = {
+  elemMatch?: Maybe<GrvscThemeFilterInput>;
+};
+
+export type GrvscThemeTokenData = {
+  __typename?: 'GRVSCThemeTokenData';
+  themeIdentifier: Scalars['String'];
+  className: Scalars['String'];
+  meta: Scalars['Int'];
+  color: Scalars['String'];
+  bold: Scalars['Boolean'];
+  italic: Scalars['Boolean'];
+  underline: Scalars['Boolean'];
+};
+
+export type GrvscThemeTokenDataFilterInput = {
+  themeIdentifier?: Maybe<StringQueryOperatorInput>;
+  className?: Maybe<StringQueryOperatorInput>;
+  meta?: Maybe<IntQueryOperatorInput>;
+  color?: Maybe<StringQueryOperatorInput>;
+  bold?: Maybe<BooleanQueryOperatorInput>;
+  italic?: Maybe<BooleanQueryOperatorInput>;
+  underline?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type GrvscThemeTokenDataFilterListInput = {
+  elemMatch?: Maybe<GrvscThemeTokenDataFilterInput>;
+};
+
+export type GrvscToken = {
+  __typename?: 'GRVSCToken';
+  text: Scalars['String'];
+  startIndex: Scalars['Int'];
+  endIndex: Scalars['Int'];
+  scopes: Array<Scalars['String']>;
+  html: Scalars['String'];
+  className: Scalars['String'];
+  defaultThemeTokenData: GrvscThemeTokenData;
+  additionalThemeTokenData: Array<GrvscThemeTokenData>;
+};
+
+export type GrvscTokenFilterInput = {
+  text?: Maybe<StringQueryOperatorInput>;
+  startIndex?: Maybe<IntQueryOperatorInput>;
+  endIndex?: Maybe<IntQueryOperatorInput>;
+  scopes?: Maybe<StringQueryOperatorInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  className?: Maybe<StringQueryOperatorInput>;
+  defaultThemeTokenData?: Maybe<GrvscThemeTokenDataFilterInput>;
+  additionalThemeTokenData?: Maybe<GrvscThemeTokenDataFilterListInput>;
+};
+
+export type GrvscTokenFilterListInput = {
+  elemMatch?: Maybe<GrvscTokenFilterInput>;
+};
+
+export type GrvscTokenizedLine = {
+  __typename?: 'GRVSCTokenizedLine';
+  tokens: Array<GrvscToken>;
+  gutterCells?: Maybe<Array<Maybe<GrvscGutterCell>>>;
+  text: Scalars['String'];
+  html: Scalars['String'];
+  attrs: Scalars['JSON'];
+  className: Scalars['String'];
+  data: Scalars['JSON'];
+  isHighlighted?: Maybe<Scalars['Boolean']>;
+  lineNumber?: Maybe<Scalars['Int']>;
+  diff?: Maybe<GrvscDiff>;
+};
+
+export type GrvscTokenizedLineFilterInput = {
+  tokens?: Maybe<GrvscTokenFilterListInput>;
+  gutterCells?: Maybe<GrvscGutterCellFilterListInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  attrs?: Maybe<JsonQueryOperatorInput>;
+  className?: Maybe<StringQueryOperatorInput>;
+  data?: Maybe<JsonQueryOperatorInput>;
+  isHighlighted?: Maybe<BooleanQueryOperatorInput>;
+  lineNumber?: Maybe<IntQueryOperatorInput>;
+  diff?: Maybe<GrvscDiffQueryOperatorInput>;
+};
+
+export type GrvscTokenizedLineFilterListInput = {
+  elemMatch?: Maybe<GrvscTokenizedLineFilterInput>;
 };
 
 export type ImageCropFocus = 
@@ -1647,6 +2379,8 @@ export type MarkdownRemark = Node & {
   parent?: Maybe<Node>;
   children: Array<Node>;
   internal: Internal;
+  grvscCodeBlocks?: Maybe<Array<Maybe<GrvscCodeBlock>>>;
+  grvscCodeSpans?: Maybe<Array<Maybe<GrvscCodeSpan>>>;
 };
 
 
@@ -1709,6 +2443,8 @@ export type MarkdownRemarkFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___path'
   | 'frontmatter___date'
+  | 'frontmatter___template'
+  | 'frontmatter___category'
   | 'excerpt'
   | 'rawMarkdownBody'
   | 'fileAbsolutePath'
@@ -1837,6 +2573,8 @@ export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
+  template?: Maybe<Scalars['String']>;
+  category?: Maybe<Scalars['String']>;
 };
 
 
@@ -1851,6 +2589,8 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   date?: Maybe<DateQueryOperatorInput>;
+  template?: Maybe<StringQueryOperatorInput>;
+  category?: Maybe<StringQueryOperatorInput>;
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -1948,12 +2688,19 @@ export type Query = {
   allSitePage: SitePageConnection;
   markdownRemark?: Maybe<MarkdownRemark>;
   allMarkdownRemark: MarkdownRemarkConnection;
+  grvscCodeBlock?: Maybe<GrvscCodeBlock>;
+  allGrvscCodeBlock: GrvscCodeBlockConnection;
+  grvscCodeSpan?: Maybe<GrvscCodeSpan>;
+  allGrvscCodeSpan: GrvscCodeSpanConnection;
+  grvscStylesheet?: Maybe<GrvscStylesheet>;
+  allGrvscStylesheet: GrvscStylesheetConnection;
   imageSharp?: Maybe<ImageSharp>;
   allImageSharp: ImageSharpConnection;
   siteBuildMetadata?: Maybe<SiteBuildMetadata>;
   allSiteBuildMetadata: SiteBuildMetadataConnection;
   sitePlugin?: Maybe<SitePlugin>;
   allSitePlugin: SitePluginConnection;
+  grvscHighlight?: Maybe<GrvscCodeBlock>;
 };
 
 
@@ -2135,6 +2882,71 @@ export type QueryAllMarkdownRemarkArgs = {
 };
 
 
+export type QueryGrvscCodeBlockArgs = {
+  index?: Maybe<IntQueryOperatorInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+  preClassName?: Maybe<StringQueryOperatorInput>;
+  codeClassName?: Maybe<StringQueryOperatorInput>;
+  language?: Maybe<StringQueryOperatorInput>;
+  meta?: Maybe<JsonQueryOperatorInput>;
+  defaultTheme?: Maybe<GrvscThemeFilterInput>;
+  additionalThemes?: Maybe<GrvscThemeFilterListInput>;
+  tokenizedLines?: Maybe<GrvscTokenizedLineFilterListInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+
+export type QueryAllGrvscCodeBlockArgs = {
+  filter?: Maybe<GrvscCodeBlockFilterInput>;
+  sort?: Maybe<GrvscCodeBlockSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryGrvscCodeSpanArgs = {
+  index?: Maybe<IntQueryOperatorInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  text?: Maybe<StringQueryOperatorInput>;
+  className?: Maybe<StringQueryOperatorInput>;
+  language?: Maybe<StringQueryOperatorInput>;
+  defaultTheme?: Maybe<GrvscThemeFilterInput>;
+  additionalThemes?: Maybe<GrvscThemeFilterListInput>;
+  tokens?: Maybe<GrvscTokenFilterListInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  parent?: Maybe<NodeFilterInput>;
+  children?: Maybe<NodeFilterListInput>;
+  internal?: Maybe<InternalFilterInput>;
+};
+
+
+export type QueryAllGrvscCodeSpanArgs = {
+  filter?: Maybe<GrvscCodeSpanFilterInput>;
+  sort?: Maybe<GrvscCodeSpanSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryGrvscStylesheetArgs = {
+  defaultTheme?: Maybe<Scalars['String']>;
+  additionalThemes?: Maybe<Array<GrvscThemeArgument>>;
+  injectStyles?: Maybe<Scalars['Boolean']>;
+};
+
+
+export type QueryAllGrvscStylesheetArgs = {
+  filter?: Maybe<GrvscStylesheetFilterInput>;
+  sort?: Maybe<GrvscStylesheetSortInput>;
+  skip?: Maybe<Scalars['Int']>;
+  limit?: Maybe<Scalars['Int']>;
+};
+
+
 export type QueryImageSharpArgs = {
   fixed?: Maybe<ImageSharpFixedFilterInput>;
   resolutions?: Maybe<ImageSharpResolutionsFilterInput>;
@@ -2197,6 +3009,15 @@ export type QueryAllSitePluginArgs = {
   sort?: Maybe<SitePluginSortInput>;
   skip?: Maybe<Scalars['Int']>;
   limit?: Maybe<Scalars['Int']>;
+};
+
+
+export type QueryGrvscHighlightArgs = {
+  source: Scalars['String'];
+  language?: Maybe<Scalars['String']>;
+  meta?: Maybe<Scalars['String']>;
+  defaultTheme?: Maybe<Scalars['String']>;
+  additionalThemes?: Maybe<Array<GrvscThemeArgument>>;
 };
 
 export type Site = Node & {
@@ -2413,6 +3234,10 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___author'
+<<<<<<< HEAD
+=======
+  | 'siteMetadata___siteUrl'
+>>>>>>> 54c57ba4cd86955e34223da8414df80867ea4acb
   | 'port'
   | 'host'
   | 'pathPrefix'
@@ -2571,11 +3396,60 @@ export type SitePageContext = {
   __typename?: 'SitePageContext';
   html?: Maybe<Scalars['String']>;
   title?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['String']>;
+  fieldValue?: Maybe<Scalars['String']>;
+  edges?: Maybe<Array<Maybe<SitePageContextEdges>>>;
+};
+
+export type SitePageContextEdges = {
+  __typename?: 'SitePageContextEdges';
+  node?: Maybe<SitePageContextEdgesNode>;
+};
+
+export type SitePageContextEdgesFilterInput = {
+  node?: Maybe<SitePageContextEdgesNodeFilterInput>;
+};
+
+export type SitePageContextEdgesFilterListInput = {
+  elemMatch?: Maybe<SitePageContextEdgesFilterInput>;
+};
+
+export type SitePageContextEdgesNode = {
+  __typename?: 'SitePageContextEdgesNode';
+  frontmatter?: Maybe<SitePageContextEdgesNodeFrontmatter>;
+  html?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  excerpt?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextEdgesNodeFilterInput = {
+  frontmatter?: Maybe<SitePageContextEdgesNodeFrontmatterFilterInput>;
+  html?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  excerpt?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePageContextEdgesNodeFrontmatter = {
+  __typename?: 'SitePageContextEdgesNodeFrontmatter';
+  path?: Maybe<Scalars['String']>;
+  title?: Maybe<Scalars['String']>;
+  category?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['String']>;
+};
+
+export type SitePageContextEdgesNodeFrontmatterFilterInput = {
+  path?: Maybe<StringQueryOperatorInput>;
+  title?: Maybe<StringQueryOperatorInput>;
+  category?: Maybe<StringQueryOperatorInput>;
+  date?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SitePageContextFilterInput = {
   html?: Maybe<StringQueryOperatorInput>;
   title?: Maybe<StringQueryOperatorInput>;
+  date?: Maybe<StringQueryOperatorInput>;
+  fieldValue?: Maybe<StringQueryOperatorInput>;
+  edges?: Maybe<SitePageContextEdgesFilterListInput>;
 };
 
 export type SitePageEdge = {
@@ -2680,6 +3554,12 @@ export type SitePageFieldsEnum =
   | 'isCreatedByStatefulCreatePages'
   | 'context___html'
   | 'context___title'
+  | 'context___date'
+  | 'context___fieldValue'
+  | 'context___edges'
+  | 'context___edges___node___html'
+  | 'context___edges___node___id'
+  | 'context___edges___node___excerpt'
   | 'pluginCreator___id'
   | 'pluginCreator___parent___id'
   | 'pluginCreator___parent___parent___id'
@@ -2721,13 +3601,35 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___resolve'
   | 'pluginCreator___name'
   | 'pluginCreator___version'
+  | 'pluginCreator___pluginOptions___plugins'
+  | 'pluginCreator___pluginOptions___plugins___resolve'
+  | 'pluginCreator___pluginOptions___plugins___id'
+  | 'pluginCreator___pluginOptions___plugins___name'
+  | 'pluginCreator___pluginOptions___plugins___version'
+  | 'pluginCreator___pluginOptions___plugins___nodeAPIs'
+  | 'pluginCreator___pluginOptions___plugins___browserAPIs'
+  | 'pluginCreator___pluginOptions___plugins___pluginFilepath'
+  | 'pluginCreator___pluginOptions___output'
+  | 'pluginCreator___pluginOptions___createLinkInHead'
   | 'pluginCreator___pluginOptions___isTSX'
   | 'pluginCreator___pluginOptions___jsxPragma'
   | 'pluginCreator___pluginOptions___allExtensions'
-  | 'pluginCreator___pluginOptions___base64Width'
-  | 'pluginCreator___pluginOptions___stripMetadata'
-  | 'pluginCreator___pluginOptions___defaultQuality'
-  | 'pluginCreator___pluginOptions___failOnError'
+  | 'pluginCreator___pluginOptions___colorTheme'
+  | 'pluginCreator___pluginOptions___injectStyles'
+  | 'pluginCreator___pluginOptions___extensionDataDirectory'
+  | 'pluginCreator___pluginOptions___logLevel'
+  | 'pluginCreator___pluginOptions___maxWidth'
+  | 'pluginCreator___pluginOptions___linkImagesToOriginal'
+  | 'pluginCreator___pluginOptions___showCaptions'
+  | 'pluginCreator___pluginOptions___markdownCaptions'
+  | 'pluginCreator___pluginOptions___sizeByPixelDensity'
+  | 'pluginCreator___pluginOptions___backgroundColor'
+  | 'pluginCreator___pluginOptions___quality'
+  | 'pluginCreator___pluginOptions___withWebp'
+  | 'pluginCreator___pluginOptions___tracedSVG'
+  | 'pluginCreator___pluginOptions___loading'
+  | 'pluginCreator___pluginOptions___disableBgImageOnAlpha'
+  | 'pluginCreator___pluginOptions___disableBgImage'
   | 'pluginCreator___pluginOptions___displayName'
   | 'pluginCreator___pluginOptions___fileName'
   | 'pluginCreator___pluginOptions___minify'
@@ -2736,6 +3638,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___name'
   | 'pluginCreator___pluginOptions___path'
   | 'pluginCreator___pluginOptions___dest'
+  | 'pluginCreator___pluginOptions___base64Width'
+  | 'pluginCreator___pluginOptions___stripMetadata'
+  | 'pluginCreator___pluginOptions___defaultQuality'
+  | 'pluginCreator___pluginOptions___failOnError'
   | 'pluginCreator___pluginOptions___short_name'
   | 'pluginCreator___pluginOptions___start_url'
   | 'pluginCreator___pluginOptions___background_color'
@@ -2748,6 +3654,15 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___crossOrigin'
   | 'pluginCreator___pluginOptions___include_favicon'
   | 'pluginCreator___pluginOptions___cacheDigest'
+  | 'pluginCreator___pluginOptions___trackingIds'
+  | 'pluginCreator___pluginOptions___pluginConfig___head'
+  | 'pluginCreator___pluginOptions___pluginConfig___respectDNT'
+  | 'pluginCreator___pluginOptions___pluginConfig___exclude'
+  | 'pluginCreator___pluginOptions___host'
+  | 'pluginCreator___pluginOptions___sitemap'
+  | 'pluginCreator___pluginOptions___policy'
+  | 'pluginCreator___pluginOptions___policy___userAgent'
+  | 'pluginCreator___pluginOptions___policy___allow'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -2940,13 +3855,51 @@ export type SitePluginFieldsEnum =
   | 'resolve'
   | 'name'
   | 'version'
+  | 'pluginOptions___plugins'
+  | 'pluginOptions___plugins___resolve'
+  | 'pluginOptions___plugins___id'
+  | 'pluginOptions___plugins___name'
+  | 'pluginOptions___plugins___version'
+  | 'pluginOptions___plugins___pluginOptions___colorTheme'
+  | 'pluginOptions___plugins___pluginOptions___injectStyles'
+  | 'pluginOptions___plugins___pluginOptions___extensionDataDirectory'
+  | 'pluginOptions___plugins___pluginOptions___logLevel'
+  | 'pluginOptions___plugins___pluginOptions___maxWidth'
+  | 'pluginOptions___plugins___pluginOptions___linkImagesToOriginal'
+  | 'pluginOptions___plugins___pluginOptions___showCaptions'
+  | 'pluginOptions___plugins___pluginOptions___markdownCaptions'
+  | 'pluginOptions___plugins___pluginOptions___sizeByPixelDensity'
+  | 'pluginOptions___plugins___pluginOptions___backgroundColor'
+  | 'pluginOptions___plugins___pluginOptions___quality'
+  | 'pluginOptions___plugins___pluginOptions___withWebp'
+  | 'pluginOptions___plugins___pluginOptions___tracedSVG'
+  | 'pluginOptions___plugins___pluginOptions___loading'
+  | 'pluginOptions___plugins___pluginOptions___disableBgImageOnAlpha'
+  | 'pluginOptions___plugins___pluginOptions___disableBgImage'
+  | 'pluginOptions___plugins___nodeAPIs'
+  | 'pluginOptions___plugins___browserAPIs'
+  | 'pluginOptions___plugins___pluginFilepath'
+  | 'pluginOptions___output'
+  | 'pluginOptions___createLinkInHead'
   | 'pluginOptions___isTSX'
   | 'pluginOptions___jsxPragma'
   | 'pluginOptions___allExtensions'
-  | 'pluginOptions___base64Width'
-  | 'pluginOptions___stripMetadata'
-  | 'pluginOptions___defaultQuality'
-  | 'pluginOptions___failOnError'
+  | 'pluginOptions___colorTheme'
+  | 'pluginOptions___injectStyles'
+  | 'pluginOptions___extensionDataDirectory'
+  | 'pluginOptions___logLevel'
+  | 'pluginOptions___maxWidth'
+  | 'pluginOptions___linkImagesToOriginal'
+  | 'pluginOptions___showCaptions'
+  | 'pluginOptions___markdownCaptions'
+  | 'pluginOptions___sizeByPixelDensity'
+  | 'pluginOptions___backgroundColor'
+  | 'pluginOptions___quality'
+  | 'pluginOptions___withWebp'
+  | 'pluginOptions___tracedSVG'
+  | 'pluginOptions___loading'
+  | 'pluginOptions___disableBgImageOnAlpha'
+  | 'pluginOptions___disableBgImage'
   | 'pluginOptions___displayName'
   | 'pluginOptions___fileName'
   | 'pluginOptions___minify'
@@ -2955,6 +3908,10 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___name'
   | 'pluginOptions___path'
   | 'pluginOptions___dest'
+  | 'pluginOptions___base64Width'
+  | 'pluginOptions___stripMetadata'
+  | 'pluginOptions___defaultQuality'
+  | 'pluginOptions___failOnError'
   | 'pluginOptions___short_name'
   | 'pluginOptions___start_url'
   | 'pluginOptions___background_color'
@@ -2967,6 +3924,15 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___crossOrigin'
   | 'pluginOptions___include_favicon'
   | 'pluginOptions___cacheDigest'
+  | 'pluginOptions___trackingIds'
+  | 'pluginOptions___pluginConfig___head'
+  | 'pluginOptions___pluginConfig___respectDNT'
+  | 'pluginOptions___pluginConfig___exclude'
+  | 'pluginOptions___host'
+  | 'pluginOptions___sitemap'
+  | 'pluginOptions___policy'
+  | 'pluginOptions___policy___userAgent'
+  | 'pluginOptions___policy___allow'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -3089,13 +4055,28 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 
 export type SitePluginPluginOptions = {
   __typename?: 'SitePluginPluginOptions';
+  plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>;
+  output?: Maybe<Scalars['String']>;
+  createLinkInHead?: Maybe<Scalars['Boolean']>;
   isTSX?: Maybe<Scalars['Boolean']>;
   jsxPragma?: Maybe<Scalars['String']>;
   allExtensions?: Maybe<Scalars['Boolean']>;
-  base64Width?: Maybe<Scalars['Int']>;
-  stripMetadata?: Maybe<Scalars['Boolean']>;
-  defaultQuality?: Maybe<Scalars['Int']>;
-  failOnError?: Maybe<Scalars['Boolean']>;
+  colorTheme?: Maybe<Scalars['String']>;
+  injectStyles?: Maybe<Scalars['Boolean']>;
+  extensionDataDirectory?: Maybe<Scalars['String']>;
+  logLevel?: Maybe<Scalars['String']>;
+  maxWidth?: Maybe<Scalars['Int']>;
+  linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
+  showCaptions?: Maybe<Scalars['Boolean']>;
+  markdownCaptions?: Maybe<Scalars['Boolean']>;
+  sizeByPixelDensity?: Maybe<Scalars['Boolean']>;
+  backgroundColor?: Maybe<Scalars['String']>;
+  quality?: Maybe<Scalars['Int']>;
+  withWebp?: Maybe<Scalars['Boolean']>;
+  tracedSVG?: Maybe<Scalars['Boolean']>;
+  loading?: Maybe<Scalars['String']>;
+  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
+  disableBgImage?: Maybe<Scalars['Boolean']>;
   displayName?: Maybe<Scalars['Boolean']>;
   fileName?: Maybe<Scalars['Boolean']>;
   minify?: Maybe<Scalars['Boolean']>;
@@ -3104,6 +4085,10 @@ export type SitePluginPluginOptions = {
   name?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
   dest?: Maybe<Scalars['String']>;
+  base64Width?: Maybe<Scalars['Int']>;
+  stripMetadata?: Maybe<Scalars['Boolean']>;
+  defaultQuality?: Maybe<Scalars['Int']>;
+  failOnError?: Maybe<Scalars['Boolean']>;
   short_name?: Maybe<Scalars['String']>;
   start_url?: Maybe<Scalars['String']>;
   background_color?: Maybe<Scalars['String']>;
@@ -3116,17 +4101,37 @@ export type SitePluginPluginOptions = {
   crossOrigin?: Maybe<Scalars['String']>;
   include_favicon?: Maybe<Scalars['Boolean']>;
   cacheDigest?: Maybe<Scalars['String']>;
+  trackingIds?: Maybe<Array<Maybe<Scalars['String']>>>;
+  pluginConfig?: Maybe<SitePluginPluginOptionsPluginConfig>;
+  host?: Maybe<Scalars['String']>;
+  sitemap?: Maybe<Scalars['String']>;
+  policy?: Maybe<Array<Maybe<SitePluginPluginOptionsPolicy>>>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>;
+  output?: Maybe<StringQueryOperatorInput>;
+  createLinkInHead?: Maybe<BooleanQueryOperatorInput>;
   isTSX?: Maybe<BooleanQueryOperatorInput>;
   jsxPragma?: Maybe<StringQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
-  base64Width?: Maybe<IntQueryOperatorInput>;
-  stripMetadata?: Maybe<BooleanQueryOperatorInput>;
-  defaultQuality?: Maybe<IntQueryOperatorInput>;
-  failOnError?: Maybe<BooleanQueryOperatorInput>;
+  colorTheme?: Maybe<StringQueryOperatorInput>;
+  injectStyles?: Maybe<BooleanQueryOperatorInput>;
+  extensionDataDirectory?: Maybe<StringQueryOperatorInput>;
+  logLevel?: Maybe<StringQueryOperatorInput>;
+  maxWidth?: Maybe<IntQueryOperatorInput>;
+  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
+  showCaptions?: Maybe<BooleanQueryOperatorInput>;
+  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
+  sizeByPixelDensity?: Maybe<BooleanQueryOperatorInput>;
+  backgroundColor?: Maybe<StringQueryOperatorInput>;
+  quality?: Maybe<IntQueryOperatorInput>;
+  withWebp?: Maybe<BooleanQueryOperatorInput>;
+  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
+  loading?: Maybe<StringQueryOperatorInput>;
+  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
+  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
   displayName?: Maybe<BooleanQueryOperatorInput>;
   fileName?: Maybe<BooleanQueryOperatorInput>;
   minify?: Maybe<BooleanQueryOperatorInput>;
@@ -3135,6 +4140,10 @@ export type SitePluginPluginOptionsFilterInput = {
   name?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
   dest?: Maybe<StringQueryOperatorInput>;
+  base64Width?: Maybe<IntQueryOperatorInput>;
+  stripMetadata?: Maybe<BooleanQueryOperatorInput>;
+  defaultQuality?: Maybe<IntQueryOperatorInput>;
+  failOnError?: Maybe<BooleanQueryOperatorInput>;
   short_name?: Maybe<StringQueryOperatorInput>;
   start_url?: Maybe<StringQueryOperatorInput>;
   background_color?: Maybe<StringQueryOperatorInput>;
@@ -3147,7 +4156,106 @@ export type SitePluginPluginOptionsFilterInput = {
   crossOrigin?: Maybe<StringQueryOperatorInput>;
   include_favicon?: Maybe<BooleanQueryOperatorInput>;
   cacheDigest?: Maybe<StringQueryOperatorInput>;
+  trackingIds?: Maybe<StringQueryOperatorInput>;
+  pluginConfig?: Maybe<SitePluginPluginOptionsPluginConfigFilterInput>;
+  host?: Maybe<StringQueryOperatorInput>;
+  sitemap?: Maybe<StringQueryOperatorInput>;
+  policy?: Maybe<SitePluginPluginOptionsPolicyFilterListInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsPluginConfig = {
+  __typename?: 'SitePluginPluginOptionsPluginConfig';
+  head?: Maybe<Scalars['Boolean']>;
+  respectDNT?: Maybe<Scalars['Boolean']>;
+  exclude?: Maybe<Array<Maybe<Scalars['String']>>>;
+};
+
+export type SitePluginPluginOptionsPluginConfigFilterInput = {
+  head?: Maybe<BooleanQueryOperatorInput>;
+  respectDNT?: Maybe<BooleanQueryOperatorInput>;
+  exclude?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsPlugins = {
+  __typename?: 'SitePluginPluginOptionsPlugins';
+  resolve?: Maybe<Scalars['String']>;
+  id?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  version?: Maybe<Scalars['String']>;
+  pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptions>;
+  nodeAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
+  browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
+  pluginFilepath?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsPluginsFilterInput = {
+  resolve?: Maybe<StringQueryOperatorInput>;
+  id?: Maybe<StringQueryOperatorInput>;
+  name?: Maybe<StringQueryOperatorInput>;
+  version?: Maybe<StringQueryOperatorInput>;
+  pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsFilterInput>;
+  nodeAPIs?: Maybe<StringQueryOperatorInput>;
+  browserAPIs?: Maybe<StringQueryOperatorInput>;
+  pluginFilepath?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsPluginsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsPluginsFilterInput>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptions = {
+  __typename?: 'SitePluginPluginOptionsPluginsPluginOptions';
+  colorTheme?: Maybe<Scalars['String']>;
+  injectStyles?: Maybe<Scalars['Boolean']>;
+  extensionDataDirectory?: Maybe<Scalars['String']>;
+  logLevel?: Maybe<Scalars['String']>;
+  maxWidth?: Maybe<Scalars['Int']>;
+  linkImagesToOriginal?: Maybe<Scalars['Boolean']>;
+  showCaptions?: Maybe<Scalars['Boolean']>;
+  markdownCaptions?: Maybe<Scalars['Boolean']>;
+  sizeByPixelDensity?: Maybe<Scalars['Boolean']>;
+  backgroundColor?: Maybe<Scalars['String']>;
+  quality?: Maybe<Scalars['Int']>;
+  withWebp?: Maybe<Scalars['Boolean']>;
+  tracedSVG?: Maybe<Scalars['Boolean']>;
+  loading?: Maybe<Scalars['String']>;
+  disableBgImageOnAlpha?: Maybe<Scalars['Boolean']>;
+  disableBgImage?: Maybe<Scalars['Boolean']>;
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
+  colorTheme?: Maybe<StringQueryOperatorInput>;
+  injectStyles?: Maybe<BooleanQueryOperatorInput>;
+  extensionDataDirectory?: Maybe<StringQueryOperatorInput>;
+  logLevel?: Maybe<StringQueryOperatorInput>;
+  maxWidth?: Maybe<IntQueryOperatorInput>;
+  linkImagesToOriginal?: Maybe<BooleanQueryOperatorInput>;
+  showCaptions?: Maybe<BooleanQueryOperatorInput>;
+  markdownCaptions?: Maybe<BooleanQueryOperatorInput>;
+  sizeByPixelDensity?: Maybe<BooleanQueryOperatorInput>;
+  backgroundColor?: Maybe<StringQueryOperatorInput>;
+  quality?: Maybe<IntQueryOperatorInput>;
+  withWebp?: Maybe<BooleanQueryOperatorInput>;
+  tracedSVG?: Maybe<BooleanQueryOperatorInput>;
+  loading?: Maybe<StringQueryOperatorInput>;
+  disableBgImageOnAlpha?: Maybe<BooleanQueryOperatorInput>;
+  disableBgImage?: Maybe<BooleanQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsPolicy = {
+  __typename?: 'SitePluginPluginOptionsPolicy';
+  userAgent?: Maybe<Scalars['String']>;
+  allow?: Maybe<Scalars['String']>;
+};
+
+export type SitePluginPluginOptionsPolicyFilterInput = {
+  userAgent?: Maybe<StringQueryOperatorInput>;
+  allow?: Maybe<StringQueryOperatorInput>;
+};
+
+export type SitePluginPluginOptionsPolicyFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsPolicyFilterInput>;
 };
 
 export type SitePluginSortInput = {
@@ -3160,12 +4268,14 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   author?: Maybe<Scalars['String']>;
+  siteUrl?: Maybe<Scalars['String']>;
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   description?: Maybe<StringQueryOperatorInput>;
   author?: Maybe<StringQueryOperatorInput>;
+  siteUrl?: Maybe<StringQueryOperatorInput>;
 };
 
 export type SiteSortInput = {

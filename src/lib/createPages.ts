@@ -6,33 +6,54 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
     const { createPage } = actions;
 
     const { data, errors } = await graphql<Query>(`
-            {
-                allMarkdownRemark {
-                    edges {
-                        node {
-                            html
-                            frontmatter {
-                                path
-                                title
-                            }
-                        }
-                    }
-                }
+    {
+      allMarkdownRemark(filter: {frontmatter: {template: {eq: "post"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+        group(field: frontmatter___category) {
+          fieldValue
+          edges {
+            node {
+              frontmatter {
+                path
+                title
+                category
+                date(formatString: "MMM D, Y")
+              }
+              html
+              id
+              excerpt(pruneLength: 200)
             }
-        `);
+          }
+        }
+      }
+    }
+    `);
 
     if (errors) {
         throw errors;
     }
 
-    data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-            path: node.frontmatter.path,
-            context: {
-                html: node.html,
-                title: node.frontmatter.title,
-            },
-            component: path.resolve(__dirname, '../templates/PostTemplate.tsx'),
-        });
+    data.allMarkdownRemark.group.forEach(({ edges, fieldValue }) => {
+      edges.forEach(({node})=> {
+        // if(node.frontmatter.template === 'post') {
+          createPage({
+              path: 'posts/' + node.frontmatter.category +'/' + node.frontmatter.path,
+              context: {
+                  html: node.html,
+                  title: node.frontmatter.title,
+                  date: node.frontmatter.date,
+              },
+              component: path.resolve(__dirname, '../templates/PostTemplate.tsx'),
+          });
+        // }
+      })
+
+      createPage({
+        path: 'posts/' + fieldValue,
+        context: {
+          fieldValue: fieldValue,
+          edges: edges,
+        },
+        component: path.resolve(__dirname, '../templates/PostListTemplate.tsx'),
+      });
     });
 }

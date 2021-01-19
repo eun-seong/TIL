@@ -1,14 +1,38 @@
 import React from 'react';
+import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
+import { Query } from '../graphql-types';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-const AboutPage: React.FC = () => (
-  <Layout>
-    <SEO title='About' />
-    <h1>About</h1>
-    <p>안녕하세요</p>
-  </Layout>
-);
+const AboutQuery = graphql`
+  query aboutQuery {
+    allMarkdownRemark(filter: { frontmatter: { title: { eq: "About" } } }) {
+      edges {
+        node {
+          frontmatter {
+            path
+            title
+            template
+          }
+          html
+          id
+        }
+      }
+    }
+  }
+`;
 
-export default AboutPage;
+const IndexPage: React.FC = () => {
+  const data = useStaticQuery<Query>(AboutQuery);
+  const contents = data.allMarkdownRemark.edges[0].node.html;
+
+  return (
+    <Layout pageTitle={'About'}>
+      <SEO title='About' />
+      <div dangerouslySetInnerHTML={{ __html: contents }} />
+    </Layout>
+  );
+};
+export default IndexPage;
