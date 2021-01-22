@@ -34,11 +34,13 @@ category: 'Java'
     `<dependencies>`에 필요한 모듈을 `<dependency>`로 추가하면 된다.   
 
 ## Spring 프로젝트
+* **Maven 프로젝트** 생성
 * resources 폴더에 있는 applicationContext.xml로 컨테이너를 만들 수 있다.
     - Class에서 직접 객체를 선언하지 않아도 해당 클래스가 메모리에 로드된다.
         - 로드된 곳 : **Spring Container**
     - beans에 있는 스키마는 거의 동일
     - `<bean/>`에 id는 알아서, class는 `{pakageName.classFullName}`으로 작성
+
     ```xml {numberLines}
     <?xml version="1.0" encoding="UTF-8"?>
 
