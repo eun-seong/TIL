@@ -203,6 +203,16 @@ data-styled.g26[id="PostTemplate__Date-sc-1i2kdhp-0"]{content:"bJxuXl,"}/*!sc*/
 </li>
 <li>이 어노테이션이 붙은 생성자는 컨테이너에서 생성될 때 자동으로 해당 객체를 찾는다.</li>
 </ul>
+<h2>의존객체 선택</h2>
+<p>동일한 객체가 2개 이상인 경우 스프링 컨테이너에서 자동 주입 대상 객체를 판단하지 못함<br>
+=> Exception 발생   </p>
+<ul>
+<li>
+<p>동일한 객체가 </p>
+<pre class="grvsc-container default-dark" data-language="xml" data-index="10"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">bean</span><span class="mtk1"> </span><span class="mtk12">id</span><span class="mtk1">=</span><span class="mtk8">&quot;wordDao1&quot;</span><span class="mtk1"> </span><span class="mtk12">class</span><span class="mtk1">=</span><span class="mtk8">&quot;com.word.dao.WordDao&quot;</span><span class="mtk1"> </span><span class="mtk17">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">bean</span><span class="mtk1"> </span><span class="mtk12">id</span><span class="mtk1">=</span><span class="mtk8">&quot;wordDao2&quot;</span><span class="mtk1"> </span><span class="mtk12">class</span><span class="mtk1">=</span><span class="mtk8">&quot;com.word.dao.WordDao&quot;</span><span class="mtk1"> </span><span class="mtk17">/&gt;</span></span></span></code></pre>
+</li>
+</ul>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;
