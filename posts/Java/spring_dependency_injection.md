@@ -170,3 +170,13 @@ public WordRegisterService(WordDao wordDao) {
     * 생성자에는 사용할 수 없고, **디폴트 생성자를 꼭 만들어 주어야 한다.**
 * 이 어노테이션이 붙은 생성자는 컨테이너에서 생성될 때 자동으로 해당 객체를 찾는다.
 
+## 의존객체 선택
+동일한 객체가 2개 이상인 경우 스프링 컨테이너에서 자동 주입 대상 객체를 판단하지 못함   
+=> Exception 발생   
+
+* 동일한 객체가 
+```xml
+<bean id="wordDao1" class="com.word.dao.WordDao" />
+<bean id="wordDao2" class="com.word.dao.WordDao" />
+```
+
