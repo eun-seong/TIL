@@ -164,19 +164,43 @@ public WordRegisterService(WordDao wordDao) {
 }
 ```
 
+* `required` 속성을 이용하여 빈이 없을 경우 예외를 피할 수 있다.   
+
+    ```java
+    @Autowired(required=false)
+    private WordDao wordDao;
+    ```
+
+#### 의존객체 선택
+동일한 객체가 2개 이상인 경우 스프링 컨테이너에서 자동 주입 대상 객체를 판단하지 못함   
+=> Exception 발생   
+
+* 동일한 객체가 있는 경우에 `@Qualifier("name")` 어노테이션 작성
+```xml
+<bean id="wordDao1" class="com.word.dao.WordDao" />
+<bean id="wordDao2" class="com.word.dao.WordDao" />
+```
+
+```java
+@Autowired
+@Qualifier("usedDao")
+private WordDao wordDao;
+```
+
+
 ### Resource Annotation
 * 주입하려고 하는 객체의 **이름**이 일치하는 객체를 자동으로 주입한다.
 * `@Resource` 어노테이션을 사용하여 함수/프로퍼티 위에 작성한다.
     * 생성자에는 사용할 수 없고, **디폴트 생성자를 꼭 만들어 주어야 한다.**
 * 이 어노테이션이 붙은 생성자는 컨테이너에서 생성될 때 자동으로 해당 객체를 찾는다.
 
-## 의존객체 선택
-동일한 객체가 2개 이상인 경우 스프링 컨테이너에서 자동 주입 대상 객체를 판단하지 못함   
-=> Exception 발생   
+### Inject Annotation
+* `Autowired` 어노테이션과 유사하지만 `required` 속성이 없다.
+* `Qualifier` 어노테이션 대신 `Named`가 있다.
 
-* 동일한 객체가 
-```xml
-<bean id="wordDao1" class="com.word.dao.WordDao" />
-<bean id="wordDao2" class="com.word.dao.WordDao" />
+```java
+@Inject
+@Named(value="wordDao1")
+private WordDao wordDao;
 ```
 
