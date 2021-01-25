@@ -33,7 +33,156 @@ data-styled.g15[id="layout__PostTitle-sc-1jer9s0-2"]{content:"gVrKgq,"}/*!sc*/
 data-styled.g16[id="layout__Main-sc-1jer9s0-3"]{content:"SJEbM,"}/*!sc*/
 .bJxuXl{color:#aaa;font-size:0.8rem;margin:1rem 0 3rem 2rem;}/*!sc*/
 data-styled.g26[id="PostTemplate__Date-sc-1i2kdhp-0"]{content:"bJxuXl,"}/*!sc*/
-</style><title data-react-helmet="true"></title><link rel="icon" href="/TIL/favicon-32x32.png?v=fe3dcf75e7489e6375dbe0d12f8135e7" type="image/png"/><link rel="manifest" href="/TIL/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/TIL/icons/icon-48x48.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="72x72" href="/TIL/icons/icon-72x72.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="96x96" href="/TIL/icons/icon-96x96.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="144x144" href="/TIL/icons/icon-144x144.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="192x192" href="/TIL/icons/icon-192x192.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="256x256" href="/TIL/icons/icon-256x256.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="384x384" href="/TIL/icons/icon-384x384.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="512x512" href="/TIL/icons/icon-512x512.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link as="script" rel="preload" href="/TIL/webpack-runtime-86c1dec773bdc99504f6.js"/><link as="script" rel="preload" href="/TIL/framework-305b3707783ccc9d7ca6.js"/><link as="script" rel="preload" href="/TIL/styles-83801f3b4dd3459a4027.js"/><link as="script" rel="preload" href="/TIL/app-d3f43ea3718d214a5aea.js"/><link as="script" rel="preload" href="/TIL/commons-8af4512f3b6a1a208031.js"/><link as="script" rel="preload" href="/TIL/component---src-templates-post-template-tsx-96485d1ac873825498a1.js"/><link as="fetch" rel="preload" href="/TIL/page-data/posts/Java/spring_web_programming/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/TIL/page-data/sq/d/3649515864.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/TIL/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="layout__Wrapper-sc-1jer9s0-0 dLSnnn"><header class="Header__HeaderDiv-sc-1vfx1sm-0 guKKsR"><div class="Header__HeaderBar-sc-1vfx1sm-1 bpFSUG"><a class="Header__SLink-sc-1vfx1sm-2 hWrfJA" href="/TIL/">dev_eun</a><div class="Header__Menu-sc-1vfx1sm-3 hOtjUF"><a class="Header__SLink-sc-1vfx1sm-2 hWrfJA" href="/TIL/posts">Posts</a><a class="Header__SLink-sc-1vfx1sm-2 hWrfJA" href="/TIL/about">About</a></div></div></header><div class="layout__Main-sc-1jer9s0-3 SJEbM"><h1 class="layout__PostTitle-sc-1jer9s0-2 gVrKgq">[Spring] 웹 프로그래밍</h1><div class="Divider__Container-ciuwsj-0 efVmPa"><span class="Divider__Line-ciuwsj-1 fSYEeS"></span><span class="Divider__Diamond-ciuwsj-2 dzwGfr"></span><span class="Divider__SubDiamond-ciuwsj-3 hDTxu"></span></div><div class="PostTemplate__Date-sc-1i2kdhp-0 bJxuXl">Jan 24, 2021</div><div><h1>설계 모델</h1>
+</style><title data-react-helmet="true"></title><link rel="icon" href="/TIL/favicon-32x32.png?v=fe3dcf75e7489e6375dbe0d12f8135e7" type="image/png"/><link rel="manifest" href="/TIL/manifest.webmanifest" crossorigin="anonymous"/><meta name="theme-color" content="#663399"/><link rel="apple-touch-icon" sizes="48x48" href="/TIL/icons/icon-48x48.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="72x72" href="/TIL/icons/icon-72x72.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="96x96" href="/TIL/icons/icon-96x96.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="144x144" href="/TIL/icons/icon-144x144.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="192x192" href="/TIL/icons/icon-192x192.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="256x256" href="/TIL/icons/icon-256x256.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="384x384" href="/TIL/icons/icon-384x384.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="apple-touch-icon" sizes="512x512" href="/TIL/icons/icon-512x512.png?v=fe3dcf75e7489e6375dbe0d12f8135e7"/><link rel="preconnect dns-prefetch" href="https://www.google-analytics.com"/><link as="script" rel="preload" href="/TIL/webpack-runtime-86c1dec773bdc99504f6.js"/><link as="script" rel="preload" href="/TIL/framework-305b3707783ccc9d7ca6.js"/><link as="script" rel="preload" href="/TIL/styles-83801f3b4dd3459a4027.js"/><link as="script" rel="preload" href="/TIL/app-d3f43ea3718d214a5aea.js"/><link as="script" rel="preload" href="/TIL/commons-8af4512f3b6a1a208031.js"/><link as="script" rel="preload" href="/TIL/component---src-templates-post-template-tsx-96485d1ac873825498a1.js"/><link as="fetch" rel="preload" href="/TIL/page-data/posts/Java/spring_web_programming/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/TIL/page-data/sq/d/3649515864.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/TIL/page-data/app-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="layout__Wrapper-sc-1jer9s0-0 dLSnnn"><header class="Header__HeaderDiv-sc-1vfx1sm-0 guKKsR"><div class="Header__HeaderBar-sc-1vfx1sm-1 bpFSUG"><a class="Header__SLink-sc-1vfx1sm-2 hWrfJA" href="/TIL/">dev_eun</a><div class="Header__Menu-sc-1vfx1sm-3 hOtjUF"><a class="Header__SLink-sc-1vfx1sm-2 hWrfJA" href="/TIL/posts">Posts</a><a class="Header__SLink-sc-1vfx1sm-2 hWrfJA" href="/TIL/about">About</a></div></div></header><div class="layout__Main-sc-1jer9s0-3 SJEbM"><h1 class="layout__PostTitle-sc-1jer9s0-2 gVrKgq">[Spring] (3)웹 프로그래밍</h1><div class="Divider__Container-ciuwsj-0 efVmPa"><span class="Divider__Line-ciuwsj-1 fSYEeS"></span><span class="Divider__Diamond-ciuwsj-2 dzwGfr"></span><span class="Divider__SubDiamond-ciuwsj-3 hDTxu"></span></div><div class="PostTemplate__Date-sc-1i2kdhp-0 bJxuXl">Jan 25, 2021</div><div><h1>설계 모델</h1>
+<h3>MVC 모델</h3>
+<ol>
+<li>클라이언트가 서버에 request</li>
+<li>서버에 <strong>Controller</strong>가 받아서 작업에 해당하는 Service(기능마다 존재)에게 전달</li>
+<li>DB가 필요하면 DAO에서 <strong>Model</strong>를 이용하여 DB와 통신</li>
+<li>Service에서 작업이 다 끝나면 Controller에서 <strong>View</strong>를 생성하여 클라이언트에게 Response</li>
+</ol>
+<h2>Spring MVC 프레임워크 설계 구조</h2>
+<span class="gatsby-resp-image-wrapper" style="position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 590px; ">
+      <a class="gatsby-resp-image-link" href="/TIL/static/f35ad4ef64c95863e3267631419e8a20/561da/2021-01-25-17-56-49.png" style="display: block" target="_blank" rel="noopener">
+    <span class="gatsby-resp-image-background-image" style="padding-bottom: 37.16216216216216%; position: relative; bottom: 0; left: 0; background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAHCAYAAAAIy204AAAACXBIWXMAAAsTAAALEwEAmpwYAAABiUlEQVQoz2WRT0tUYRTGL7R10SKDFhW0cxEIQqsiCPoALaSWblxEICG4EiGiZd9AwpZREEjrjBRGC7OydFQqo6GZ5jp/uM117sy9931+nXkHZcgDD+85h3POe87zBJJDykC5vT3I/IH4+33YvIE+X0Wlx+jXI/OvWe46reIcrZ2H8OkK2ryJtm4RWLu3o/fIP84X75AVzqLVYfRjBrd3l3TltI/bXydJtu9BYQi9u4A+XLaB8Ud08BxqL1FziazTgPoiLnxBVnlGGn0hTRpkSZU8jcG1IasbrE6JoYvShh3VtKNiG1gcx70J0HJAtnaR6PdrtHIKvbXcUkC39AQjAGcrp6kjimL+xl0Ok9znBi/rWaCogP4soOpTXO0VeadGVl7AledRZR7ae4TVCs16mU5yyEFYoRaWaEUhLu/2afE69BHwH4e9X8N6Qttqc8/hbdzqOePsDOzPGKbR+/Owfgl2J/p9JqQX02/oJ+cDkFf4WGVrYmMUrY+gnw/Q/izqxRtj6NvUiYH/AHXH97WkTTEGAAAAAElFTkSuQmCC'); background-size: cover; display: block;"></span>
+  <img class="gatsby-resp-image-image" alt="Spring MVC framework architecture" title="Spring MVC framework architecture" src="/TIL/static/f35ad4ef64c95863e3267631419e8a20/fcda8/2021-01-25-17-56-49.png" srcset="/TIL/static/f35ad4ef64c95863e3267631419e8a20/12f09/2021-01-25-17-56-49.png 148w,
+/TIL/static/f35ad4ef64c95863e3267631419e8a20/e4a3f/2021-01-25-17-56-49.png 295w,
+/TIL/static/f35ad4ef64c95863e3267631419e8a20/fcda8/2021-01-25-17-56-49.png 590w,
+/TIL/static/f35ad4ef64c95863e3267631419e8a20/efc66/2021-01-25-17-56-49.png 885w,
+/TIL/static/f35ad4ef64c95863e3267631419e8a20/561da/2021-01-25-17-56-49.png 969w" sizes="(max-width: 590px) 100vw, 590px" style="width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;" loading="lazy">
+  </a>
+    </span>
+<ul>
+<li>
+<p>DispathcherServlet</p>
+<ul>
+<li>클라이언트의 요청을 받음</li>
+</ul>
+</li>
+<li>
+<p>HandlerMapping</p>
+<ul>
+<li>여러 개의 Controller 중에서 가장 적합한 Controller 선택</li>
+</ul>
+</li>
+<li>
+<p>HandlerAdapter</p>
+<ul>
+<li>해당 Controller에서 요청에 적합한 메소드를 선택</li>
+</ul>
+</li>
+<li>
+<p>Controller</p>
+<ul>
+<li>Service, DAO, DB와 연결</li>
+<li>작업을 수행한 후 model, view를 반환</li>
+</ul>
+</li>
+<li>
+<p>ViewResolver</p>
+<ul>
+<li>해당 작업 중 가장 적합한 View를 선택</li>
+</ul>
+</li>
+<li>클라이언트의 request를 DispatcherServlet이 받음</li>
+<li>DispatcherServlet은 적합한 Controller를 선택하여 다시 서블릿에게 보내준다.</li>
+<li>해당 컨트롤러를 받은 서블릿은 HandlerAdapter에게 요청한다.</li>
+<li>어댑터는 컨트롤러에서 적합한 메소드를 찾아 작업을 요청한다.</li>
+<li>컨트롤러는 작업을 수행한 후 model, view를 반환한다.</li>
+<li>서블릿은 ViewResolver에게 요청하여 가장 적합한 view를 찾아 반환한다.</li>
+<li>서블릿은 해당 View에 응답을 생성한다.</li>
+<li>View가 클라이언트에게 Response를 보낸다.</li>
+</ul>
+<h4>특징</h4>
+<ul>
+<li>
+<p>HandlerMapping, HandlerAdapter, ViewResolver는 스프링 컨테이너가 생성된 후 컨테이너 안에 자동으로 생성된다.</p>
+<ul>
+<li>수정할 필요 X</li>
+</ul>
+</li>
+<li>개발자가 작업해야하는 것들은 Controller, View</li>
+</ul>
+<h3>DispatcherServlet</h3>
+<h4><code>web.xml</code>에 서블릿 mapping</h4>
+<pre class="grvsc-container default-dark" data-language="xml" data-index="0"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">&lt;!--&gt; web.xml &lt;--&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">servlet</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk17">&lt;</span><span class="mtk4">servlet-name</span><span class="mtk17">&gt;</span><span class="mtk1">{서블릿 별칭}</span><span class="mtk17">&lt;/</span><span class="mtk4">servlet-name</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk17">&lt;</span><span class="mtk4">servlet-class</span><span class="mtk17">&gt;</span><span class="mtk1">{패키지 이름을 포함한 전체 서블릿명}</span><span class="mtk17">&lt;/</span><span class="mtk4">servlet-class</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk17">&lt;</span><span class="mtk4">init-param</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk17">&lt;</span><span class="mtk4">param-name</span><span class="mtk17">&gt;</span><span class="mtk1">{Spring 설정 파일 이름}</span><span class="mtk17">&lt;/</span><span class="mtk4">param-name</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk17">&lt;</span><span class="mtk4">param-value</span><span class="mtk17">&gt;</span><span class="mtk1">WEB-INF/spring/appServlet/{Spring 설정 파일}</span><span class="mtk17">&lt;/</span><span class="mtk4">param-value</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk17">&lt;/</span><span class="mtk4">init-param</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;/</span><span class="mtk4">servlet</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">servlet-mapping</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk17">&lt;</span><span class="mtk4">servlet-name</span><span class="mtk17">&gt;</span><span class="mtk1">{서블릿 별칭}</span><span class="mtk17">&lt;/</span><span class="mtk4">servlet-name</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk17">&lt;</span><span class="mtk4">url-pattern</span><span class="mtk17">&gt;</span><span class="mtk1">/{맵핑명}</span><span class="mtk17">&lt;/</span><span class="mtk4">url-pattern</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;/</span><span class="mtk4">servlet-mapping</span><span class="mtk17">&gt;</span></span></span></code></pre>
+<h3>Controller 객체</h3>
+<ul>
+<li><code>servlet-context.xml</code> 파일에 <code>&#x3C;annotation-driven/></code> 만 기재하면 만들 수 있다.</li>
+<li>
+<p>Controller 객체로 사용할 클래스를 정의할 땐 클래스에 <code>@Controller</code> 어노테이션을 붙여야 한다.</p>
+<ul>
+<li>HandlerMapping이 해당 컨트롤러를 찾을 수 있다.</li>
+</ul>
+</li>
+</ul>
+<pre class="grvsc-container default-dark" data-language="java" data-index="1"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Controller</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">HomeController</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk3">// 엄청난 코드</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<h4><code>@RequestMapping</code></h4>
+<ul>
+<li>Adapter가 적절한 메소드를 찾기 위해선 컨트롤러 클래스 멤버 메소드에 <code>@RequestMapping("/{메소드명}")</code> 어노테이션을 붙여야 한다.</li>
+</ul>
+<pre class="grvsc-container default-dark" data-language="java" data-index="2"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Controller</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">HomeController</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    ...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    @</span><span class="mtk10">RequestMapping</span><span class="mtk1">(</span><span class="mtk8">&quot;/sampleMethod&quot;</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk10">String</span><span class="mtk1"> </span><span class="mtk11">sampleFunc</span><span class="mtk1">(</span><span class="mtk10">Model</span><span class="mtk1"> </span><span class="mtk12">model</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<h4>Model 타입 파라미터</h4>
+<ul>
+<li>맵핑된 메소드에 파라미터로 <code>Model</code> 타입의 객체가 전달된다.</li>
+<li><code>setAttribute()</code> 함수를 통해서 Model를 수정할 수 있으며 작업이 끝난 후 서블릿에게 전달된다.</li>
+</ul>
+<pre class="grvsc-container default-dark" data-language="java" data-index="3"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Controller</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">HomeController</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    ...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    @</span><span class="mtk10">RequestMapping</span><span class="mtk1">(</span><span class="mtk8">&quot;/sampleMethod&quot;</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk10">String</span><span class="mtk1"> </span><span class="mtk11">sampleFunc</span><span class="mtk1">(</span><span class="mtk10">Model</span><span class="mtk1"> </span><span class="mtk12">model</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk12">model</span><span class="mtk1">.</span><span class="mtk11">setAttribute</span><span class="mtk1">(</span><span class="mtk8">&quot;tmpData&quot;</span><span class="mtk1">, </span><span class="mtk8">&quot;model has data!!&quot;</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<h3>View 객체</h3>
+<ul>
+<li><code>InternalResourceViewResolver</code> 빈 객체를 추가해야 한다.</li>
+<li>맵핑된 메소드의 반환값과 <code>suffix</code> 값을 합친 이름의 jsp를 찾는다.</li>
+</ul>
+<pre class="grvsc-container default-dark" data-language="xml" data-index="4"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk3">&lt;!--&gt; spring 설정 파일 &lt;--&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;</span><span class="mtk4">beans:bean</span><span class="mtk1"> </span><span class="mtk12">class</span><span class="mtk1">=</span><span class="mtk8">&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;</span><span class="mtk17">&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk17">&lt;</span><span class="mtk4">beans:property</span><span class="mtk1"> </span><span class="mtk12">name</span><span class="mtk1">=</span><span class="mtk8">&quot;prefix&quot;</span><span class="mtk1"> </span><span class="mtk12">value</span><span class="mtk1">=</span><span class="mtk8">&quot;/WEB-INF/views/&quot;</span><span class="mtk17">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk17">&lt;</span><span class="mtk4">beans:property</span><span class="mtk1"> </span><span class="mtk12">name</span><span class="mtk1">=</span><span class="mtk8">&quot;suffix&quot;</span><span class="mtk1"> </span><span class="mtk12">value</span><span class="mtk1">=</span><span class="mtk8">&quot;.jsp&quot;</span><span class="mtk17">/&gt;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk17">&lt;/</span><span class="mtk4">beans:bean</span><span class="mtk17">&gt;</span></span></span></code></pre>
+<pre class="grvsc-container default-dark" data-language="java" data-index="5"><code class="grvsc-code"><span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">@</span><span class="mtk10">Controller</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk4">class</span><span class="mtk1"> </span><span class="mtk10">HomeController</span><span class="mtk1"> {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    ...</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    @</span><span class="mtk10">RequestMapping</span><span class="mtk1">(</span><span class="mtk8">&quot;/sampleMethod&quot;</span><span class="mtk1">)</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    </span><span class="mtk4">public</span><span class="mtk1"> </span><span class="mtk10">String</span><span class="mtk1"> </span><span class="mtk11">sampleFunc</span><span class="mtk1">(</span><span class="mtk10">Model</span><span class="mtk1"> </span><span class="mtk12">model</span><span class="mtk1">) {</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk12">model</span><span class="mtk1">.</span><span class="mtk11">setAttribute</span><span class="mtk1">(</span><span class="mtk8">&quot;tmpData&quot;</span><span class="mtk1">, </span><span class="mtk8">&quot;model has data!!&quot;</span><span class="mtk1">);</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">        </span><span class="mtk15">return</span><span class="mtk1"> </span><span class="mtk8">&quot;success&quot;</span><span class="mtk1">;</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">    }</span></span></span>
+<span class="grvsc-line"><span class="grvsc-source"><span class="mtk1">}</span></span></span></code></pre>
+<blockquote>
+<p>=> <code>/WEB-INF/views/success.jsp</code></p>
+</blockquote>
 <style class="grvsc-styles">
   .grvsc-container {
     overflow: auto;
@@ -123,6 +272,23 @@ data-styled.g26[id="PostTemplate__Date-sc-1i2kdhp-0"]{content:"bJxuXl,"}/*!sc*/
     opacity: 0.7;
   }
   
+  .default-dark {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+  }
+  .default-dark .mtk3 { color: #6A9955; }
+  .default-dark .mtk17 { color: #808080; }
+  .default-dark .mtk4 { color: #569CD6; }
+  .default-dark .mtk1 { color: #D4D4D4; }
+  .default-dark .mtk10 { color: #4EC9B0; }
+  .default-dark .mtk8 { color: #CE9178; }
+  .default-dark .mtk11 { color: #DCDCAA; }
+  .default-dark .mtk12 { color: #9CDCFE; }
+  .default-dark .mtk15 { color: #C586C0; }
+  .default-dark .grvsc-line-highlighted::before {
+    background-color: var(--grvsc-line-highlighted-background-color, rgba(255, 255, 255, 0.1));
+    box-shadow: inset var(--grvsc-line-highlighted-border-width, 4px) 0 0 0 var(--grvsc-line-highlighted-border-color, rgba(255, 255, 255, 0.5));
+  }
 </style></div><div></div></div><footer class="Footer__Container-z0o2kh-0 bKahjr"><div class="Footer__Wrapper-z0o2kh-1 cqsjTS"><div>© <!-- -->2021<!-- -->, dev_eun</div><div class="Footer__Icons-z0o2kh-2 fkfjZC"><a href="https://github.com/eun-seong" class="Footer__Link-z0o2kh-3 dZetdL"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"></path></svg></a><a href="mailto:eunseongofficial@gmail.com" class="Footer__Link-z0o2kh-3 dZetdL"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg></a><a href="https://programmer-eun.tistory.com/" class="Footer__Link-z0o2kh-3 dZetdL"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34a.9959.9959 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg></a><a href="https://instagram.com/eeun_seong" class="Footer__Link-z0o2kh-3 dZetdL"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"></path></svg></a></div></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-T4NZQC7Q38"></script><script>
       window.excludeGtagPaths=[/^(?:\/preview\/(?:(?!(?:\/|^)\.).)*?)$/,/^(?:\/do\-not\-track\/me\/too\/)$/];
       
