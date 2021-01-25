@@ -112,7 +112,7 @@ public void process() {
 * 요청량이 과다해질 경우 장애가 발생할 수 있다.
   
 #### 메시지가 흘러가는 큰 그림
-![](../2021-01-24-19-59-06.png)
+<img srg='./images/2021-01-24-19-59-06.png' width=700 alt='sample kafka flow'/>
 
 * Flow의 flow
     1. subscriber가 publisher에게 `subscribe()`

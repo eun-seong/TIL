@@ -1,5 +1,5 @@
 ---
-title: '[Spring] 의존 객체(DI)'
+title: '[Spring] (2)의존 객체(DI)'
 path: 'spring_dependency_injection'
 date: '2021-01-22 16:31:14'
 template: 'post'

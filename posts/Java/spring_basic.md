@@ -1,5 +1,5 @@
 ---
-title: '[Spring] Spring 개요'
+title: '[Spring] (1) Spring 개요'
 path: 'spring_basic'
 date: '2021-01-21 17:50:17'
 template: 'post'

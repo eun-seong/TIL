@@ -1,5 +1,5 @@
 ---
-title: '[Spring] 생명주기 및 설정 파일'
+title: '[Spring] (3)생명주기 및 설정 파일'
 path: 'spring_lifeCycle_and_Settings'
 date: '2021-01-24 15:51:32'
 template: 'post'
