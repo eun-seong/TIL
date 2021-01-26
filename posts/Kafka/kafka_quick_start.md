@@ -20,8 +20,6 @@ producer가 생성하고 consumer가 소비하는 메세지
 * `topic` 안에서 여러 개의 partition으로 나누어져 있다.   
 * 메세지를 쓰고 읽을 때 분산 처리하여 빠르게 수행 가능하다.   
 * consumer group 당 하나의 consumer**만** 접근이 허용된다.
-*  
-
 * log : `partition`의 한 칸을 뜻한다.
 
 #### broker
