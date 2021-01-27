@@ -550,8 +550,8 @@ export type FileFieldsEnum =
   | 'childrenMarkdownRemark___id'
   | 'childrenMarkdownRemark___frontmatter___title'
   | 'childrenMarkdownRemark___frontmatter___path'
-  | 'childrenMarkdownRemark___frontmatter___date'
   | 'childrenMarkdownRemark___frontmatter___template'
+  | 'childrenMarkdownRemark___frontmatter___date'
   | 'childrenMarkdownRemark___frontmatter___category'
   | 'childrenMarkdownRemark___excerpt'
   | 'childrenMarkdownRemark___rawMarkdownBody'
@@ -608,8 +608,8 @@ export type FileFieldsEnum =
   | 'childMarkdownRemark___id'
   | 'childMarkdownRemark___frontmatter___title'
   | 'childMarkdownRemark___frontmatter___path'
-  | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___frontmatter___template'
+  | 'childMarkdownRemark___frontmatter___date'
   | 'childMarkdownRemark___frontmatter___category'
   | 'childMarkdownRemark___excerpt'
   | 'childMarkdownRemark___rawMarkdownBody'
@@ -2442,8 +2442,8 @@ export type MarkdownRemarkFieldsEnum =
   | 'id'
   | 'frontmatter___title'
   | 'frontmatter___path'
-  | 'frontmatter___date'
   | 'frontmatter___template'
+  | 'frontmatter___date'
   | 'frontmatter___category'
   | 'excerpt'
   | 'rawMarkdownBody'
@@ -2572,8 +2572,8 @@ export type MarkdownRemarkFrontmatter = {
   __typename?: 'MarkdownRemarkFrontmatter';
   title?: Maybe<Scalars['String']>;
   path?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
   template?: Maybe<Scalars['String']>;
+  date?: Maybe<Scalars['Date']>;
   category?: Maybe<Scalars['String']>;
 };
 
@@ -2588,8 +2588,8 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   path?: Maybe<StringQueryOperatorInput>;
-  date?: Maybe<DateQueryOperatorInput>;
   template?: Maybe<StringQueryOperatorInput>;
+  date?: Maybe<DateQueryOperatorInput>;
   category?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -3234,10 +3234,7 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___author'
-<<<<<<< HEAD
-=======
   | 'siteMetadata___siteUrl'
->>>>>>> 54c57ba4cd86955e34223da8414df80867ea4acb
   | 'port'
   | 'host'
   | 'pathPrefix'

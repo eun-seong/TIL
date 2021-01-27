@@ -65,7 +65,6 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
-  text-decoration: none;
   color: rebeccapurple;
   transition: opacity 0.2s;
 }
@@ -450,9 +449,4 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
-
-#___gatsby,
-#gatsby-focus-wrapper {
-  height: 100vh;
 }
