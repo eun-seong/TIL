@@ -115,9 +115,9 @@ Standard Template Library
         ```
 
 * `lower_bound(iterator start, iterator end, value)`
-    * [`start`, `end`) 범위에서 value 값보다 크거나 같은 값들 중 가장 작은 값을 찾음
+    * [`start`, `end`) 범위에서 value 값보다 크거나 같은 값들 중 가장 먼저 있는 값의 이터레이터
 * `upper_bound(iterator start, iterator end, value)`
-    * [`start`, `end`) 범위에서 value 값보다 작거나 같은 값들 중 가장 큰 값을 찾음
+    * [`start`, `end`) 범위에서 value 값보다 작거나 같은 값들 중 가장 먼저 있는 값의 이터레이터
 
 ### Functio object
 `sort()` 함수 3번째 인자 함수 객체, 함수, 함수 포인터 등을 객체로 받아 알고리즘의 유연함을 더해준다.
