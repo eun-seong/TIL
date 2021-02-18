@@ -15,3 +15,11 @@ category: 'Java'
         <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
     ```
+
+### `map()`
+* 단일 스트림의 원소를 매핑시킨 후, 그 값을 다시 스트림으로 변환하는 중간 연산 담당
+* 객체에서 원하는 원소를 변경/추출하는 역할
+
+### `flatMap()`
+* Array나 Object로 감싸져 있는 모든 원소를 단일 원소 스트림으로 반환
+* 
