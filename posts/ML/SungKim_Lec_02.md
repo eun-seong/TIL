@@ -1,5 +1,5 @@
 ---
-title: '[ML] 성킴님 딥러닝 강의 02, 선형 회귀(Linear Regression'
+title: '[ML] 성킴님 딥러닝 강의 02, 선형 회귀(Linear Regression)'
 path: 'SungKim_Lec_02'
 date: '2021-03-03 17:05:29'
 template: 'post'

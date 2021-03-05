@@ -1,5 +1,5 @@
 ---
-title: '[ML] 성킴님 딥러닝 강의 03, 다변수 선형 회귀(multi-variable linear regression'
+title: '[ML] 성킴님 딥러닝 강의 03, 다변수 선형 회귀(multi-variable linear regression)'
 path: 'SungKim_Lec_03'
 date: '2021-03-03 18:42:03'
 template: 'post'
