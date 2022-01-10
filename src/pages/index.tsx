@@ -1,7 +1,13 @@
+import styled from '@emotion/styled';
 import { formatISO, sub } from 'date-fns';
-import { useCallback, useEffect } from 'react';
+import { Fragment, useCallback, useEffect, useState } from 'react';
 import CalendarGraph from '../components/CalendarGraph';
+import useCommitDiff from '../hooks/useCommitDiff';
 import useDailyCommits from '../hooks/useDailyCommits';
+
+const Contents = styled.div`
+  white-space: pre-wrap;
+`;
 
 // markup
 const IndexPage = () => {
@@ -14,8 +20,19 @@ const IndexPage = () => {
     { representation: 'date' },
   );
   const { data, isLoading } = useDailyCommits({ sinceDate });
+  const { fetch, data: diffData } = useCommitDiff();
+  const [clickDate, setClickDate] = useState('');
 
-  const onCommitClick = useCallback(() => {}, []);
+  const onCommitClick = useCallback(({ date, from, to }) => {
+    fetch({ from, to });
+    setClickDate(date);
+  }, []);
+
+  useEffect(() => {
+    if (!diffData) return;
+
+    console.log(diffData);
+  }, [diffData]);
 
   useEffect(() => {
     if (!isLoading) console.log(data);
@@ -25,7 +42,7 @@ const IndexPage = () => {
     <div>
       {!isLoading && data && (
         <CalendarGraph
-          onClick={onCommitClick}
+          onCommitClick={onCommitClick}
           sinceDate={sinceDate}
           data={data.reduce(
             (prev, commit) => ({
@@ -36,6 +53,20 @@ const IndexPage = () => {
           )}
         />
       )}
+      <div>
+        {diffData && (
+          <Fragment>
+            <div>{clickDate}</div>
+            {diffData.map((data) => (
+              <div>
+                <div>{data.filename}</div>
+                <Contents>{data.patch}</Contents>
+                <br />
+              </div>
+            ))}
+          </Fragment>
+        )}
+      </div>
     </div>
   );
 };
