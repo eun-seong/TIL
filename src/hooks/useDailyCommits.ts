@@ -1,6 +1,6 @@
 import { formatISO } from 'date-fns';
 import { useEffect, useRef, useState } from 'react';
-import { Commit, ResCommit } from '../types';
+import { Commit } from '../types';
 import useLazyFetch from './useLazyFetch';
 
 const useDailyCommits = ({ sinceDate }) => {
@@ -16,12 +16,19 @@ const useDailyCommits = ({ sinceDate }) => {
       since: `${sinceDate}T00:00:00+09:00`,
     },
     transformResponse: (res: string) =>
-      JSON.parse(res).map(
-        (commit: ResCommit): Commit => ({
-          sha: commit.sha,
-          date: formatISO(new Date(commit.commit.committer.date), { representation: 'date' }),
-        }),
-      ),
+      JSON.parse(res)
+        .reverse()
+        .reduce(
+          (prev: Commit[], cur) => [
+            ...prev,
+            {
+              prevSha: prev.length ? prev[prev.length - 1].sha : null,
+              sha: cur.sha,
+              date: formatISO(new Date(cur.commit.committer.date), { representation: 'date' }),
+            },
+          ],
+          [],
+        ),
   };
 
   useEffect(() => {

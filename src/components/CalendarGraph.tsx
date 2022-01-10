@@ -1,5 +1,12 @@
 import styled from '@emotion/styled';
 import { formatISO, add } from 'date-fns';
+import { Commit } from '../types';
+
+interface Props {
+  onClick: () => void;
+  sinceDate: string;
+  data: { [key: string]: Commit[] };
+}
 
 const WEEK_NUM = 52;
 
@@ -22,7 +29,7 @@ const CommitRect = ({ day, commitDate, isCommitted }) => (
   <Rect data-date={commitDate} width={11} height={11} y={day * 15} rx={2} ry={2} isCommitted={isCommitted} />
 );
 
-const CalendarGraph = ({ data, sinceDate }: { sinceDate: string; data: string[] }) => {
+const CalendarGraph = ({ onClick, data, sinceDate }: Props) => {
   const today = new Date();
   const since = new Date(sinceDate);
   let count = 0;
@@ -36,15 +43,20 @@ const CalendarGraph = ({ data, sinceDate }: { sinceDate: string; data: string[] 
         }),
         { representation: 'date' },
       );
-      const isCommitted = !!data.find((date) => {
+      const isCommitted = !!Object.keys(data).find((date) => {
         return date === commitDate;
       });
       count += 1;
       return <CommitRect key={`${week}-${day}`} day={day} commitDate={commitDate} isCommitted={isCommitted} />;
     });
+  const onCommitClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { date } = (e.target as SVGElement).dataset;
+    if (!date || !data[date]) return;
+    console.log(date);
+  };
 
   return (
-    <GraphContainer>
+    <GraphContainer onClick={onCommitClick}>
       <svg width={(WEEK_NUM + 1) * 16 - 5} height={6 * 15 + 11}>
         <g>
           {Array.from({ length: WEEK_NUM }).map((_, week) => (
