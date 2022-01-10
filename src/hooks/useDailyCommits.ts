@@ -39,14 +39,11 @@ const useDailyCommits = ({ sinceDate }) => {
     if (!fetchingData) return;
 
     if (!fetchingData.length) {
-      console.log('data fetching finish!');
       setIsLoading(false);
       return;
     }
 
     data.current = data.current.concat(fetchingData);
-    console.log(countPage.current, data.current);
-
     lazyFetch({ ...options, params: { ...options.params, page: countPage.current++ } });
   }, [fetchingData]);
 
