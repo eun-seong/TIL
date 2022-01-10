@@ -1,12 +1,17 @@
 import styled from '@emotion/styled';
 import { formatISO, sub } from 'date-fns';
 import { Fragment, useCallback, useEffect, useState } from 'react';
+
 import CalendarGraph from '../components/CalendarGraph';
 import useCommitDiff from '../hooks/useCommitDiff';
 import useDailyCommits from '../hooks/useDailyCommits';
+import Layout from '../layout';
+import { DiffDocs } from '../templates';
 
-const Contents = styled.div`
-  white-space: pre-wrap;
+const CommitDate = styled.div`
+  padding: 3.5rem 13px 1.4rem 13px;
+  font-weight: 700;
+  font-size: 1.7rem;
 `;
 
 // markup
@@ -39,7 +44,7 @@ const IndexPage = () => {
   }, [data, isLoading]);
 
   return (
-    <div>
+    <Layout>
       {!isLoading && data && (
         <CalendarGraph
           onCommitClick={onCommitClick}
@@ -53,21 +58,23 @@ const IndexPage = () => {
           )}
         />
       )}
-      <div>
-        {diffData && (
-          <Fragment>
-            <div>{clickDate}</div>
-            {diffData.map((data) => (
-              <div>
-                <div>{data.filename}</div>
-                <Contents>{data.patch}</Contents>
-                <br />
-              </div>
-            ))}
-          </Fragment>
-        )}
-      </div>
-    </div>
+      {diffData && (
+        <Fragment>
+          <CommitDate>
+            {clickDate
+              .split('-')
+              .reduce(
+                (date, cur, index) =>
+                  index === 0 ? `${cur}년 ` : index === 1 ? `${date}${cur}월 ` : `${date}${cur}일`,
+                '',
+              )}
+          </CommitDate>
+          {diffData.map((data) => (
+            <DiffDocs filename={data.filename} patch={data.patch} />
+          ))}
+        </Fragment>
+      )}
+    </Layout>
   );
 };
 

@@ -14,7 +14,7 @@ const GraphContainer = styled.div`
   box-sizing: border-box;
   border: 1px solid #d0d7de;
   border-radius: 6px;
-  padding: 10px;
+  padding: 13px 11px;
   width: fit-content;
 `;
 
@@ -54,14 +54,14 @@ const CalendarGraph = ({ onCommitClick, data, sinceDate }: Props) => {
 
   return (
     <GraphContainer onClick={onClick}>
-      <svg width={(WEEK_NUM + 1) * 16 - 5} height={6 * 15 + 11}>
+      <svg width={(WEEK_NUM + 1) * 15 - 4} height={7 * 15 - 4}>
         <g>
           {Array.from({ length: WEEK_NUM }).map((_, week) => (
-            <g key={week} transform={`translate(${week * 16}, 0)`}>
+            <g key={week} transform={`translate(${week * 15}, 0)`}>
               {WeekCommit(7, week)}
             </g>
           ))}
-          <g transform={`translate(${WEEK_NUM * 16}, 0)`}>{WeekCommit(new Date().getDay() + 1, WEEK_NUM)}</g>
+          <g transform={`translate(${WEEK_NUM * 15}, 0)`}>{WeekCommit(new Date().getDay() + 1, WEEK_NUM)}</g>
         </g>
       </svg>
     </GraphContainer>
