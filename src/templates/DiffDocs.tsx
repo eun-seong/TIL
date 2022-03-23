@@ -1,5 +1,14 @@
 import styled from '@emotion/styled';
 
+const DiffDocs = ({ filename, patch }) => {
+  return (
+    <DiffWrapper>
+      <FileName>{filename}</FileName>
+      <Contents>{patch}</Contents>
+    </DiffWrapper>
+  );
+};
+
 const DiffWrapper = styled.div`
   margin-bottom: 2.2rem;
   border: 1px solid #efefef;
@@ -19,14 +28,4 @@ const Contents = styled.div`
   padding: 11px 13px;
   white-space: pre-wrap;
 `;
-
-const DiffDocs = ({ filename, patch }) => {
-  return (
-    <DiffWrapper>
-      <FileName>{filename}</FileName>
-      <Contents>{patch}</Contents>
-    </DiffWrapper>
-  );
-};
-
 export default DiffDocs;

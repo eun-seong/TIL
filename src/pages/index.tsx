@@ -8,12 +8,6 @@ import useDailyCommits from '../hooks/useDailyCommits';
 import Layout from '../layout';
 import { DiffDocs } from '../templates';
 
-const CommitDate = styled.div`
-  padding: 3.5rem 13px 1.4rem 13px;
-  font-weight: 700;
-  font-size: 1.7rem;
-`;
-
 // markup
 const IndexPage = () => {
   const today = new Date();
@@ -77,5 +71,11 @@ const IndexPage = () => {
     </Layout>
   );
 };
+
+const CommitDate = styled.div`
+  padding: 3.5rem 13px 1.4rem 13px;
+  font-weight: 700;
+  font-size: 1.7rem;
+`;
 
 export default IndexPage;

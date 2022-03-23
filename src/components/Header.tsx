@@ -1,5 +1,21 @@
 import styled from '@emotion/styled';
 
+const Header = () => {
+  return (
+    <HeaderContainer>
+      <Title>{process.env.GATSBY_AUTHOR}</Title>
+      <Menus>
+        <ul>
+          <a>topics</a>
+        </ul>
+        <ul>
+          <a>study</a>
+        </ul>
+      </Menus>
+    </HeaderContainer>
+  );
+};
+
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
@@ -15,23 +31,15 @@ const Title = styled.div`
   font-weight: 800;
 `;
 
-const Menu = styled.span`
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-weight: 600;
-  padding-left: 1rem;
+const Menus = styled.li`
+  list-style-type: none;
+  ul {
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-left: 1rem;
+    float: left;
+  }
 `;
-
-const Header = () => {
-  return (
-    <HeaderContainer>
-      <Title>{process.env.GATSBY_AUTHOR}</Title>
-      <div>
-        <Menu>topics</Menu>
-        <Menu>study</Menu>
-      </div>
-    </HeaderContainer>
-  );
-};
 
 export default Header;

@@ -10,21 +10,6 @@ interface Props {
 
 const WEEK_NUM = 52;
 
-const GraphContainer = styled.div`
-  box-sizing: border-box;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
-  padding: 13px 11px;
-  width: fit-content;
-`;
-
-const Rect = styled.rect<{ isCommitted: boolean }>`
-  fill: ${({ isCommitted }) => (isCommitted ? 'tomato' : '#eeeeee')};
-  :hover {
-    cursor: pointer;
-  }
-`;
-
 const CommitRect = ({ day, commitDate, isCommitted }) => (
   <Rect data-date={commitDate} width={11} height={11} y={day * 15} rx={2} ry={2} isCommitted={isCommitted} />
 );
@@ -68,4 +53,18 @@ const CalendarGraph = ({ onCommitClick, data, sinceDate }: Props) => {
   );
 };
 
+const GraphContainer = styled.div`
+  box-sizing: border-box;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  padding: 13px 11px;
+  width: fit-content;
+`;
+
+const Rect = styled.rect<{ isCommitted: boolean }>`
+  fill: ${({ isCommitted }) => (isCommitted ? 'tomato' : '#eeeeee')};
+  :hover {
+    cursor: pointer;
+  }
+`;
 export default CalendarGraph;
