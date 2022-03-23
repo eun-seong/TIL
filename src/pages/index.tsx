@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 import { formatISO, sub } from 'date-fns';
 import { Fragment, useCallback, useEffect, useState } from 'react';
 
-import CalendarGraph from '../components/CalendarGraph';
-import useCommitDiff from '../hooks/useCommitDiff';
-import useDailyCommits from '../hooks/useDailyCommits';
-import Layout from '../layout';
-import { DiffDocs } from '../templates';
+import CalendarGraph from '@src/components/CalendarGraph';
+import useCommitDiff from '@src/hooks/useCommitDiff';
+import useDailyCommits from '@src/hooks/useDailyCommits';
+import Layout from '@src/layout';
+import { DiffDocs } from '@src/templates';
 
 // markup
 const IndexPage = () => {
@@ -39,7 +39,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      {!isLoading && data && (
+      {/* {!isLoading && data && (
         <CalendarGraph
           onCommitClick={onCommitClick}
           sinceDate={sinceDate}
@@ -51,7 +51,7 @@ const IndexPage = () => {
             {},
           )}
         />
-      )}
+      )} */}
       {diffData && (
         <Fragment>
           <CommitDate>

@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
+import { ThemeProvider } from '@emotion/react';
 
 import './reset.css';
-import Header from '../components/Header';
+import theme from '@src/styles/theme';
+import Header from '@src/components/Header';
 
 const LayoutWrapper = styled.div`
   & > * {
@@ -17,10 +19,12 @@ const Contents = styled.main`
 
 const Layout = ({ children }) => {
   return (
-    <LayoutWrapper>
-      <Header />
-      <Contents>{children}</Contents>
-    </LayoutWrapper>
+    <ThemeProvider theme={theme}>
+      <LayoutWrapper>
+        <Header />
+        <Contents>{children}</Contents>
+      </LayoutWrapper>
+    </ThemeProvider>
   );
 };
 

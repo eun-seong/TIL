@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { AxiosError, AxiosRequestConfig } from 'axios';
 
-import { fetch } from '../utils/fetch';
+import { fetch } from '@src/utils/fetch';
 
 const useLazyFetch = <T>() => {
   const [data, setData] = useState<T | null>(null);

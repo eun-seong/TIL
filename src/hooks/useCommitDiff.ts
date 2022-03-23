@@ -1,4 +1,4 @@
-import { CommitDiff } from '../types';
+import { CommitDiff } from '@src/types';
 import useLazyFetch from './useLazyFetch';
 
 const useCommitDiff = () => {

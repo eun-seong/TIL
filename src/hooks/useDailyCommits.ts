@@ -1,6 +1,6 @@
 import { formatISO } from 'date-fns';
 import { useEffect, useRef, useState } from 'react';
-import { Commit } from '../types';
+import { Commit } from '@src/types';
 import useLazyFetch from './useLazyFetch';
 
 const useDailyCommits = ({ sinceDate }) => {

@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { formatISO, add } from 'date-fns';
-import { Commit } from '../types';
+import { Commit } from '@src/types';
 
 interface Props {
   onCommitClick: ({ date, from, to }: { date: string; from: string; to: string }) => void;

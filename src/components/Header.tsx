@@ -1,16 +1,50 @@
+import { useEffect, useState } from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import styled from '@emotion/styled';
 
+import { COLLECTIONS } from '@src/constants';
+import env from '@src/config/env';
+
 const Header = () => {
+  const [isCollectionEnable, setCollectionEnable] = useState(false);
+  const {
+    allDirectory: { edges },
+  } = useStaticQuery(graphql`
+    query {
+      allDirectory(filter: { sourceInstanceName: { eq: "contents" }, relativeDirectory: { eq: "" } }) {
+        edges {
+          node {
+            relativePath
+            relativeDirectory
+            id
+          }
+        }
+      }
+    }
+  `);
+
+  useEffect(() => {
+    if (edges.filter(({ node }) => node.relativePath === COLLECTIONS)) {
+      setCollectionEnable(true);
+    }
+  }, [edges]);
+
   return (
     <HeaderContainer>
-      <Title>{process.env.GATSBY_AUTHOR}</Title>
+      <Title>{env.GATSBY_AUTHOR}</Title>
       <Menus>
-        <ul>
-          <a>topics</a>
-        </ul>
-        <ul>
-          <a>study</a>
-        </ul>
+        {edges
+          .filter(({ node }) => node.relativePath !== COLLECTIONS)
+          .map(({ node }) => (
+            <ul key={node.id}>
+              <a>{node.relativePath}</a>
+            </ul>
+          ))}
+        {isCollectionEnable && (
+          <ul key={COLLECTIONS}>
+            <a>{COLLECTIONS}</a>
+          </ul>
+        )}
       </Menus>
     </HeaderContainer>
   );
