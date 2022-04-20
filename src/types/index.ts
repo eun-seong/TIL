@@ -20,6 +20,6 @@ export type ResCommitDiff = {
 export type CommitDiff = {
   sha: string;
   filename: string;
-  status: 'modified' | 'added' | 'deleted';
+  status: 'modified' | 'added';
   patch: string;
 };
