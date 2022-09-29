@@ -1,10 +1,10 @@
 {
   "main": {
-    "id": "b0bb48c3604357ef",
+    "id": "ad958106fc2eda84",
     "type": "split",
     "children": [
       {
-        "id": "baa71dc70329a910",
+        "id": "e589f9a036d2abef",
         "type": "leaf",
         "state": {
           "type": "empty",
@@ -15,15 +15,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "efb92a0a8076ff36",
+    "id": "d1386dd735fe8f35",
     "type": "split",
     "children": [
       {
-        "id": "13337e389c0524ca",
+        "id": "71e659e03501cb93",
         "type": "tabs",
         "children": [
           {
-            "id": "a838d166596bb1ec",
+            "id": "e900b8817395ed32",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -31,7 +31,7 @@
             }
           },
           {
-            "id": "7a219a2c77b106cd",
+            "id": "dd35a93221282228",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -46,7 +46,7 @@
             }
           },
           {
-            "id": "1c72214505285a79",
+            "id": "8dc5092b499dfebc",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -60,15 +60,15 @@
     "width": 300
   },
   "right": {
-    "id": "d652e91264727c07",
+    "id": "f63b81f72e2a88bb",
     "type": "split",
     "children": [
       {
-        "id": "2da1f638a9aa076b",
+        "id": "b2f707933ad216cb",
         "type": "tabs",
         "children": [
           {
-            "id": "9399da2b7a2c7faa",
+            "id": "9f3165c2b5c4acc4",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -84,7 +84,7 @@
             }
           },
           {
-            "id": "b98b67d076d80475",
+            "id": "fdf97653fb4117af",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -95,7 +95,7 @@
             }
           },
           {
-            "id": "a7da7e3c7d544961",
+            "id": "b05938e1df6020f3",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -106,27 +106,20 @@
             }
           },
           {
-            "id": "4a5844f181c2af49",
+            "id": "9e990ba9217a1ce2",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 379.5
+    "width": 300,
+    "collapsed": true
   },
-  "active": "4a5844f181c2af49",
-  "lastOpenFiles": [
-    "무제노트.md",
-    "chapter1-multi_threading.md",
-    "무제노트 1.md",
-    "chapter1-q1-how_lock_guard_works.md",
-    "README.md",
-    "2022-08-21.md"
-  ]
+  "active": "e589f9a036d2abef",
+  "lastOpenFiles": []
 }

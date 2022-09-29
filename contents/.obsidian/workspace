@@ -1,29 +1,33 @@
 {
   "main": {
-    "id": "b0bb48c3604357ef",
+    "id": "660ae0b6ac3e96a1",
     "type": "split",
     "children": [
       {
-        "id": "baa71dc70329a910",
+        "id": "b78681b6cbd5f0b2",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "collections/번역글/how-does-javascript-really-work.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "efb92a0a8076ff36",
+    "id": "31921b2ec7d2da21",
     "type": "split",
     "children": [
       {
-        "id": "13337e389c0524ca",
+        "id": "acc4b9a0827470a6",
         "type": "tabs",
         "children": [
           {
-            "id": "a838d166596bb1ec",
+            "id": "955bf3b52f335694",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -31,7 +35,7 @@
             }
           },
           {
-            "id": "7a219a2c77b106cd",
+            "id": "9029f026659b719f",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -46,7 +50,7 @@
             }
           },
           {
-            "id": "1c72214505285a79",
+            "id": "b276e43455e54004",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -60,19 +64,20 @@
     "width": 300
   },
   "right": {
-    "id": "d652e91264727c07",
+    "id": "edd0974e2d804388",
     "type": "split",
     "children": [
       {
-        "id": "2da1f638a9aa076b",
+        "id": "d9e90f0722b6a983",
         "type": "tabs",
         "children": [
           {
-            "id": "9399da2b7a2c7faa",
+            "id": "7f604921845f5e2b",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "collections/번역글/how-does-javascript-really-work.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -84,18 +89,19 @@
             }
           },
           {
-            "id": "b98b67d076d80475",
+            "id": "20862d490d79ea2c",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "collections/번역글/how-does-javascript-really-work.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "a7da7e3c7d544961",
+            "id": "56897a715eac9939",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -106,27 +112,28 @@
             }
           },
           {
-            "id": "4a5844f181c2af49",
+            "id": "03cfbf95f231c74f",
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "collections/번역글/how-does-javascript-really-work.md"
+              }
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 379.5
+    "width": 300,
+    "collapsed": true
   },
-  "active": "4a5844f181c2af49",
+  "active": "b78681b6cbd5f0b2",
   "lastOpenFiles": [
-    "무제노트.md",
-    "chapter1-multi_threading.md",
-    "무제노트 1.md",
-    "chapter1-q1-how_lock_guard_works.md",
-    "README.md",
-    "2022-08-21.md"
+    "posts/webpack.md",
+    "posts/optimistic-update.md",
+    "collections/게임 서버 프로그래밍 교과서/chapter1-multi_threading.md",
+    "collections/게임 서버 프로그래밍 교과서/chapter1-q1-how_lock_guard_works.md",
+    "collections/게임 서버 프로그래밍 교과서/README.md"
   ]
 }
