@@ -6,7 +6,6 @@ import DOMPurify from 'dompurify'
 import { getAllPosts, getPostByPath } from 'lib/api'
 
 import Layout from 'components/Layout'
-import PostContent from 'components/PostContent'
 
 type Props = {
   post: {
@@ -36,9 +35,7 @@ export default function Post({ post }: Props) {
 
   return (
     <Layout>
-      <PostContent>
-        <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
-      </PostContent>
+      <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
     </Layout>
   )
 }

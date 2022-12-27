@@ -2,6 +2,8 @@ import fs from 'fs'
 import { join, extname, basename, dirname } from 'path'
 import matter from 'gray-matter'
 
+import { Item } from 'types/post.type'
+
 type DirectoryType = 'posts' | 'books'
 
 const getRootDirectory = (type: DirectoryType) => join(process.cwd(), '_contents', type)
@@ -19,13 +21,6 @@ export function getPostByPath(path: string, type: DirectoryType = 'posts') {
   const fullPath = join(rootDirectory, path)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
-
-  type Item = {
-    [key: string]: string
-    slug: string
-    path: string
-    content: string
-  }
 
   const item: Item = {
     path: dirname(path),
