@@ -1,0 +1,19 @@
+@import 'styles/variables';
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  border-bottom: 1px solid $color-gray200;
+
+  &>div {
+    width: $content-width;
+  }
+}
+
+.header__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}

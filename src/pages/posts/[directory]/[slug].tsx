@@ -5,6 +5,9 @@ import DOMPurify from 'dompurify'
 
 import { getAllPosts, getPostByPath } from 'lib/api'
 
+import Layout from 'components/Layout'
+import PostContent from 'components/PostContent'
+
 type Props = {
   post: {
     slug: string
@@ -30,7 +33,14 @@ export default function Post({ post }: Props) {
   // if (!router.isFallback && !post?.slug) {
   //   return <ErrorPage statusCode={404} />
   // }
-  return <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+
+  return (
+    <Layout>
+      <PostContent>
+        <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+      </PostContent>
+    </Layout>
+  )
 }
 
 type Params = {
